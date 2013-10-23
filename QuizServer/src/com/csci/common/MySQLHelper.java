@@ -39,7 +39,7 @@ public class MySQLHelper
 		return instance;
 	}
 	
-	public ResultSet executeSelect(String query)
+	private ResultSet executeSelect(String query)
 	{
 		try
 		{
@@ -53,7 +53,7 @@ public class MySQLHelper
 		return null;
 	}
 	
-	public int executeNonQuery(String sql)
+	private int executeNonQuery(String sql)
 	{
 		try
 		{

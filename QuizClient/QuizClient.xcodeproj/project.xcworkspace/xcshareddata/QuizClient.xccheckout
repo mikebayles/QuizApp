@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>02CE15A0-0B55-4EC3-B569-CBAD95DA9996</string>
+	<key>IDESourceControlProjectName</key>
+	<string>QuizClient</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BBB9F148-23EB-40EF-A52E-B395603A5AE3</key>
+		<string>https://github.com/mikebayles/QuizApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>QuizClient/QuizClient.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BBB9F148-23EB-40EF-A52E-B395603A5AE3</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mikebayles/QuizApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BBB9F148-23EB-40EF-A52E-B395603A5AE3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BBB9F148-23EB-40EF-A52E-B395603A5AE3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>QuizApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

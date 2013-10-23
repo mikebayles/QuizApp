@@ -37,9 +37,7 @@ public class QuizThread extends Thread
         	{
         		Auth auth = gson.fromJson(json, Auth.class);
         		mySQLHelper.authorize(auth);
-        	}
-        	
-			
+        	}   			
 		} 
         catch (IOException e)
         {
