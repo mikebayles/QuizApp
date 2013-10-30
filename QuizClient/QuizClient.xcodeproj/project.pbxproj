@@ -12,9 +12,9 @@
 		6077BC98181765C1005FFF1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC97181765C1005FFF1D /* UIKit.framework */; };
 		6077BC9E181765C2005FFF1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6077BC9C181765C2005FFF1D /* InfoPlist.strings */; };
 		6077BCA0181765C2005FFF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BC9F181765C2005FFF1D /* main.m */; };
-		6077BCA4181765C2005FFF1D /* QuizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BCA3181765C2005FFF1D /* QuizAppDelegate.m */; };
+		6077BCA4181765C2005FFF1D /* LoginViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BCA3181765C2005FFF1D /* LoginViewDelegate.m */; };
 		6077BCA7181765C2005FFF1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6077BCA5181765C2005FFF1D /* Main.storyboard */; };
-		6077BCAA181765C2005FFF1D /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BCA9181765C2005FFF1D /* QuizViewController.m */; };
+		6077BCAA181765C2005FFF1D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BCA9181765C2005FFF1D /* LoginViewController.m */; };
 		6077BCAC181765C2005FFF1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6077BCAB181765C2005FFF1D /* Images.xcassets */; };
 		6077BCB3181765C2005FFF1D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BCB2181765C2005FFF1D /* XCTest.framework */; };
 		6077BCB4181765C2005FFF1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC93181765C1005FFF1D /* Foundation.framework */; };
@@ -34,6 +34,12 @@
 		6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1918176F3F005FFF1D /* JSONModel+networking.m */; };
 		6077BD2718176F3F005FFF1D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */; };
 		6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */; };
+		60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFEB18209A07006732E6 /* QuizViewController.m */; };
+		60EBEFEF1820A4F9006732E6 /* QuizNetworkHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */; };
+		60EBEFF21820A67D006732E6 /* ProfileBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFF11820A67D006732E6 /* ProfileBrain.m */; };
+		60EBEFF51820B9F4006732E6 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFF41820B9F4006732E6 /* Profile.m */; };
+		60F15779181CDF4000FEA411 /* QuizHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F15778181CDF4000FEA411 /* QuizHomeController.m */; };
+		60F1577C181CE43600FEA411 /* UserSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F1577B181CE43600FEA411 /* UserSettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +61,11 @@
 		6077BC9D181765C2005FFF1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6077BC9F181765C2005FFF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6077BCA1181765C2005FFF1D /* QuizClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuizClient-Prefix.pch"; sourceTree = "<group>"; };
-		6077BCA2181765C2005FFF1D /* QuizAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizAppDelegate.h; sourceTree = "<group>"; };
-		6077BCA3181765C2005FFF1D /* QuizAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizAppDelegate.m; sourceTree = "<group>"; };
+		6077BCA2181765C2005FFF1D /* LoginViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
+		6077BCA3181765C2005FFF1D /* LoginViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewDelegate.m; sourceTree = "<group>"; };
 		6077BCA6181765C2005FFF1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6077BCA8181765C2005FFF1D /* QuizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
-		6077BCA9181765C2005FFF1D /* QuizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		6077BCA8181765C2005FFF1D /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6077BCA9181765C2005FFF1D /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6077BCAB181765C2005FFF1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6077BCB1181765C2005FFF1D /* QuizClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6077BCB2181765C2005FFF1D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -134,6 +140,18 @@
 		6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		6077BD1D18176F3F005FFF1D /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		60EBEFEA18209A07006732E6 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = ../QuizViewController.h; sourceTree = "<group>"; };
+		60EBEFEB18209A07006732E6 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = ../QuizViewController.m; sourceTree = "<group>"; };
+		60EBEFED1820A4F9006732E6 /* QuizNetworkHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizNetworkHelp.h; sourceTree = "<group>"; };
+		60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizNetworkHelp.m; sourceTree = "<group>"; };
+		60EBEFF01820A67D006732E6 /* ProfileBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileBrain.h; sourceTree = "<group>"; };
+		60EBEFF11820A67D006732E6 /* ProfileBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileBrain.m; sourceTree = "<group>"; };
+		60EBEFF31820B9F4006732E6 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		60EBEFF41820B9F4006732E6 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		60F15777181CDF4000FEA411 /* QuizHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizHomeController.h; sourceTree = "<group>"; };
+		60F15778181CDF4000FEA411 /* QuizHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizHomeController.m; sourceTree = "<group>"; };
+		60F1577A181CE43600FEA411 /* UserSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSettingsController.h; sourceTree = "<group>"; };
+		60F1577B181CE43600FEA411 /* UserSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,16 +216,26 @@
 		6077BC99181765C1005FFF1D /* QuizClient */ = {
 			isa = PBXGroup;
 			children = (
+				60EBEFEA18209A07006732E6 /* QuizViewController.h */,
+				60EBEFEB18209A07006732E6 /* QuizViewController.m */,
 				6077BCCD18176D66005FFF1D /* Models */,
-				6077BCA2181765C2005FFF1D /* QuizAppDelegate.h */,
-				6077BCA3181765C2005FFF1D /* QuizAppDelegate.m */,
+				6077BCA2181765C2005FFF1D /* LoginViewDelegate.h */,
+				6077BCA3181765C2005FFF1D /* LoginViewDelegate.m */,
 				6077BCA5181765C2005FFF1D /* Main.storyboard */,
-				6077BCA8181765C2005FFF1D /* QuizViewController.h */,
-				6077BCA9181765C2005FFF1D /* QuizViewController.m */,
+				6077BCA8181765C2005FFF1D /* LoginViewController.h */,
+				6077BCA9181765C2005FFF1D /* LoginViewController.m */,
 				6077BCAB181765C2005FFF1D /* Images.xcassets */,
 				6077BC9A181765C2005FFF1D /* Supporting Files */,
 				6077BCC8181768F1005FFF1D /* LoginBrain.h */,
 				6077BCC9181768F1005FFF1D /* LoginBrain.m */,
+				60F15777181CDF4000FEA411 /* QuizHomeController.h */,
+				60F15778181CDF4000FEA411 /* QuizHomeController.m */,
+				60F1577A181CE43600FEA411 /* UserSettingsController.h */,
+				60F1577B181CE43600FEA411 /* UserSettingsController.m */,
+				60EBEFED1820A4F9006732E6 /* QuizNetworkHelp.h */,
+				60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */,
+				60EBEFF01820A67D006732E6 /* ProfileBrain.h */,
+				60EBEFF11820A67D006732E6 /* ProfileBrain.m */,
 			);
 			path = QuizClient;
 			sourceTree = "<group>";
@@ -246,6 +274,8 @@
 			children = (
 				6077BCCE18176D7A005FFF1D /* Auth.h */,
 				6077BCCF18176D7A005FFF1D /* Auth.m */,
+				60EBEFF31820B9F4006732E6 /* Profile.h */,
+				60EBEFF41820B9F4006732E6 /* Profile.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -533,16 +563,22 @@
 				6077BD2118176F3F005FFF1D /* JSONModelClassProperty.m in Sources */,
 				6077BCCA181768F1005FFF1D /* LoginBrain.m in Sources */,
 				6077BD2718176F3F005FFF1D /* JSONKeyMapper.m in Sources */,
+				60F15779181CDF4000FEA411 /* QuizHomeController.m in Sources */,
 				6077BD2218176F3F005FFF1D /* JSONModelError.m in Sources */,
 				6077BCA0181765C2005FFF1D /* main.m in Sources */,
+				60EBEFEF1820A4F9006732E6 /* QuizNetworkHelp.m in Sources */,
 				6077BD1F18176F3F005FFF1D /* JSONModel.m in Sources */,
 				6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */,
 				6077BD2318176F3F005FFF1D /* NSArray+JSONModel.m in Sources */,
+				60EBEFF51820B9F4006732E6 /* Profile.m in Sources */,
+				60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */,
 				6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */,
-				6077BCA4181765C2005FFF1D /* QuizAppDelegate.m in Sources */,
-				6077BCAA181765C2005FFF1D /* QuizViewController.m in Sources */,
+				60EBEFF21820A67D006732E6 /* ProfileBrain.m in Sources */,
+				6077BCA4181765C2005FFF1D /* LoginViewDelegate.m in Sources */,
+				6077BCAA181765C2005FFF1D /* LoginViewController.m in Sources */,
 				6077BD2418176F3F005FFF1D /* JSONAPI.m in Sources */,
 				6077BD2018176F3F005FFF1D /* JSONModelArray.m in Sources */,
+				60F1577C181CE43600FEA411 /* UserSettingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

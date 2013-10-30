@@ -8,6 +8,7 @@
 
 #import "LoginBrain.h"
 #import "Auth.h"
+#import "QuizNetworkHelp.h"
 
 @implementation LoginBrain
 
@@ -17,19 +18,11 @@
     auth.username = username;
     auth.password = password;
     
-    // Create socket pair:
-    CFReadStreamRef readStream;
-    CFWriteStreamRef writeStream;
-    CFStringRef remoteHost = CFSTR("localhost");
-    CFStreamCreatePairWithSocketToHost(NULL, remoteHost, 9898, &readStream, &writeStream);
+    NSString* message = [NSString stringWithFormat:@"json=%@",[auth toJSONString]];
     
-    // Write something (the socket is not valid before you read or write):
-    CFWriteStreamOpen(writeStream);
-    NSString* message = [NSString stringWithFormat:@"authorize\n%@\n",[auth toJSONString]];
+    NSString* response = [QuizNetworkHelp makePostRequest:message withServlet: @"LoginServlet"];
     
-    CFWriteStreamWrite(writeStream, (const UInt8 *)[message UTF8String], [message length]);
-    
-    return true;
+    return [response isEqualToString:@"TRUE"];
 }
 
 @end

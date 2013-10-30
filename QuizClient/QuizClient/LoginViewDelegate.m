@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Mike Bayles. All rights reserved.
 //
 
-#import "QuizAppDelegate.h"
+#import "LoginViewDelegate.h"
 
-@implementation QuizAppDelegate
+@implementation LoginViewDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
