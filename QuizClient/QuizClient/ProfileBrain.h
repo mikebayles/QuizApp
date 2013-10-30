@@ -11,5 +11,5 @@
 
 @interface ProfileBrain : NSObject
 @property (nonatomic,strong) Profile* profile;
--(void) updateProfile;
+-(BOOL) updateProfile;
 @end

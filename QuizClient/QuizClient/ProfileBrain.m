@@ -25,11 +25,13 @@
     return [[Profile alloc] initWithString:response error:&err];
 }
 
--(void) updateProfile
+-(BOOL) updateProfile
 {
     NSString* message = [NSString stringWithFormat:@"method=update&json=%@",[self.profile toJSONString]];
     
-    [QuizNetworkHelp makePostRequest:message withServlet:@"ProfileServlet"];
+    NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"ProfileServlet"];
+    
+    return [response integerValue] == 1;
 }
 
 @end

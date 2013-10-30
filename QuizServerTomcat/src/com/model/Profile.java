@@ -2,30 +2,12 @@ package com.model;
 
 public class Profile
 {
-	private String username = "";
-	private String password = "";
 	private String firstname = "";
 	private String lastname = "";
 	private String email = "";
 	private boolean isTeacher = false;
-	
-	
-	public String getUsername()
-	{
-		return username;
-	}
-	public void setUsername(String username)
-	{
-		this.username = username;
-	}
-	public String getPassword()
-	{
-		return password;
-	}
-	public void setPassword(String password)
-	{
-		this.password = password;
-	}
+	private Auth auth = new Auth();
+
 	public String getFirstname()
 	{
 		return firstname;
@@ -57,6 +39,14 @@ public class Profile
 	public void setTeacher(boolean isTeacher)
 	{
 		this.isTeacher = isTeacher;
+	}
+	public Auth getAuth()
+	{
+		return auth;
+	}
+	public void setAuth(Auth auth)
+	{
+		this.auth = auth;
 	}
 	
 	

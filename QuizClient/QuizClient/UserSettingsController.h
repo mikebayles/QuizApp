@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtConfirmPassword;
+@property (weak, nonatomic) IBOutlet UILabel *lblPasswordMatch;
 - (IBAction)btnSubmit:(id)sender;
 @property (nonatomic,strong) ProfileBrain *brain;
 @end

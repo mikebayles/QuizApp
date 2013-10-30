@@ -53,7 +53,7 @@ public class ProfileServlet extends HttpServlet {
 		if(method.equals("update"))
 		{
 			Profile prof = gson.fromJson(request.getParameter("json"), Profile.class);
-			prof.setUsername(session.getAttribute("username").toString());
+			prof.getAuth().setUsername(session.getAttribute("username").toString());
 			writer.println(mySQLHelper.setProfile(prof));
 		}
 		else

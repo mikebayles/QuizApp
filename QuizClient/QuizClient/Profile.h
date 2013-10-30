@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "JSONModel.h"
+#import "Auth.h"
 
 @interface Profile : JSONModel
 
-@property NSString *username;
-@property NSString *password;
 @property NSString *firstname;
 @property NSString *lastname;
 @property NSString *email;
 @property bool isTeacher;
+@property Auth *auth;
 
 @end

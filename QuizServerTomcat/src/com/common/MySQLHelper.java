@@ -111,7 +111,10 @@ public class MySQLHelper
 	public int setProfile(Profile profile)
 	{
 		String query = String.format("UPDATE q_users set first_name = '%s', last_name = '%s', email = '%s' where username = '%s'",
-				profile.getFirstname(),profile.getLastname(),profile.getEmail(), profile.getUsername());
+				profile.getFirstname(),profile.getLastname(),profile.getEmail(), profile.getAuth().getUsername());
+		if(profile.getAuth().getPassword().length() > 1)
+			query = String.format("UPDATE q_users set first_name = '%s', last_name = '%s', email = '%s', password = '%s' where username = '%s'",
+					profile.getFirstname(),profile.getLastname(),profile.getEmail(),profile.getAuth().getPassword(), profile.getAuth().getUsername());
 		
 		return executeNonQuery(query);
 	}

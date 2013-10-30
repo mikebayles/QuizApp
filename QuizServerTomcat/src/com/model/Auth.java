@@ -2,8 +2,8 @@ package com.model;
 
 public class Auth
 {
-	private String username;
-	private String password;
+	private String username = "";
+	private String password = "";
 	
 	public String getUsername() 
 	{
