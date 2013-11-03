@@ -4,9 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.model.Answer;
 import com.model.Auth;
+import com.model.Course;
 import com.model.Profile;
+import com.model.Question;
+import com.model.Quiz;
 
 public class MySQLHelper
 {
@@ -117,5 +123,64 @@ public class MySQLHelper
 					profile.getFirstname(),profile.getLastname(),profile.getEmail(),profile.getAuth().getPassword(), profile.getAuth().getUsername());
 		
 		return executeNonQuery(query);
+	}
+	
+	public List<Quiz> getQuizes(String username)
+	{
+		List<Quiz> ret = new ArrayList<Quiz>();
+		
+		String query = String.format("SELECT * "
+				+ "FROM "
+				+ 	"q_quiz join q_roster on q_roster.course = q_quiz.course join "
+				+ 	"q_course on q_course.course_code = q_roster.course "
+				+ 	"where student = '%s'", username);		
+		try
+		{
+			ResultSet rs = executeSelect(query);
+			while(rs.next())
+			{
+				Quiz quiz = new Quiz(rs.getInt("id"), rs.getString("description"), new Course(rs.getString("course_code"), rs.getString("course_description")));
+				quiz.setQuestions(getQuestions(quiz.getId()));
+				ret.add(quiz);
+			}
+			
+			ret.add(null);
+		} 
+		catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ret;
+	}
+	
+	private List<Question> getQuestions(int id) throws SQLException
+	{
+		List<Question> ret = new ArrayList<Question>();
+		
+		String query = String.format("SELECT * FROM q_question where quiz = %s", id);
+		ResultSet rs = executeSelect(query);
+		while(rs.next())
+		{
+			Question question = new Question(rs.getInt("id"), rs.getString("text"));
+			question.setAnswers(getAnswers(question.getId()));
+		}
+		
+		return ret;
+	}
+
+	private List<Answer> getAnswers(int id) throws SQLException
+	{
+		List<Answer> ret = new ArrayList<Answer>();
+		
+		String query = String.format("SELECT * FROM q_answer where question = %s", id);
+		ResultSet rs = executeSelect(query);
+		while(rs.next())
+		{
+			Answer answer = new Answer(rs.getInt("id"), rs.getString("text"), rs.getBoolean("is_correct"));
+			ret.add(answer);
+		}
+		
+		return ret;
 	}
 }

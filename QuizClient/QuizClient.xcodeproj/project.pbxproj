@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603AABE11825873F002DF9A6 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE01825873F002DF9A6 /* Answer.m */; };
+		603AABE4182587EC002DF9A6 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE3182587EC002DF9A6 /* Question.m */; };
+		603AABE718258A0F002DF9A6 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE618258A0F002DF9A6 /* Quiz.m */; };
+		603AABEA18258AE1002DF9A6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE918258AE1002DF9A6 /* Course.m */; };
+		603AABED1825BB09002DF9A6 /* QuizBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABEC1825BB09002DF9A6 /* QuizBrain.m */; };
+		603AABF01825BF1E002DF9A6 /* QuizCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABEF1825BF1E002DF9A6 /* QuizCollection.m */; };
 		6077BC94181765C1005FFF1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC93181765C1005FFF1D /* Foundation.framework */; };
 		6077BC96181765C1005FFF1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC95181765C1005FFF1D /* CoreGraphics.framework */; };
 		6077BC98181765C1005FFF1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC97181765C1005FFF1D /* UIKit.framework */; };
@@ -53,6 +59,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		603AABDF1825873F002DF9A6 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		603AABE01825873F002DF9A6 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
+		603AABE2182587EB002DF9A6 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		603AABE3182587EC002DF9A6 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		603AABE518258A0F002DF9A6 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
+		603AABE618258A0F002DF9A6 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
+		603AABE818258AE1002DF9A6 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		603AABE918258AE1002DF9A6 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		603AABEB1825BB09002DF9A6 /* QuizBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizBrain.h; sourceTree = "<group>"; };
+		603AABEC1825BB09002DF9A6 /* QuizBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizBrain.m; sourceTree = "<group>"; };
+		603AABEE1825BF1E002DF9A6 /* QuizCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizCollection.h; sourceTree = "<group>"; };
+		603AABEF1825BF1E002DF9A6 /* QuizCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizCollection.m; sourceTree = "<group>"; };
 		6077BC90181765C1005FFF1D /* QuizClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6077BC93181765C1005FFF1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6077BC95181765C1005FFF1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -236,6 +254,8 @@
 				60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */,
 				60EBEFF01820A67D006732E6 /* ProfileBrain.h */,
 				60EBEFF11820A67D006732E6 /* ProfileBrain.m */,
+				603AABEB1825BB09002DF9A6 /* QuizBrain.h */,
+				603AABEC1825BB09002DF9A6 /* QuizBrain.m */,
 			);
 			path = QuizClient;
 			sourceTree = "<group>";
@@ -276,6 +296,16 @@
 				6077BCCF18176D7A005FFF1D /* Auth.m */,
 				60EBEFF31820B9F4006732E6 /* Profile.h */,
 				60EBEFF41820B9F4006732E6 /* Profile.m */,
+				603AABDF1825873F002DF9A6 /* Answer.h */,
+				603AABE01825873F002DF9A6 /* Answer.m */,
+				603AABE2182587EB002DF9A6 /* Question.h */,
+				603AABE3182587EC002DF9A6 /* Question.m */,
+				603AABE518258A0F002DF9A6 /* Quiz.h */,
+				603AABE618258A0F002DF9A6 /* Quiz.m */,
+				603AABE818258AE1002DF9A6 /* Course.h */,
+				603AABE918258AE1002DF9A6 /* Course.m */,
+				603AABEE1825BF1E002DF9A6 /* QuizCollection.h */,
+				603AABEF1825BF1E002DF9A6 /* QuizCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -559,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6077BD2518176F3F005FFF1D /* JSONHTTPClient.m in Sources */,
+				603AABE4182587EC002DF9A6 /* Question.m in Sources */,
 				6077BCD018176D7A005FFF1D /* Auth.m in Sources */,
 				6077BD2118176F3F005FFF1D /* JSONModelClassProperty.m in Sources */,
 				6077BCCA181768F1005FFF1D /* LoginBrain.m in Sources */,
@@ -567,14 +598,19 @@
 				6077BD2218176F3F005FFF1D /* JSONModelError.m in Sources */,
 				6077BCA0181765C2005FFF1D /* main.m in Sources */,
 				60EBEFEF1820A4F9006732E6 /* QuizNetworkHelp.m in Sources */,
+				603AABE718258A0F002DF9A6 /* Quiz.m in Sources */,
 				6077BD1F18176F3F005FFF1D /* JSONModel.m in Sources */,
 				6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */,
 				6077BD2318176F3F005FFF1D /* NSArray+JSONModel.m in Sources */,
+				603AABEA18258AE1002DF9A6 /* Course.m in Sources */,
 				60EBEFF51820B9F4006732E6 /* Profile.m in Sources */,
 				60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */,
 				6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */,
 				60EBEFF21820A67D006732E6 /* ProfileBrain.m in Sources */,
+				603AABED1825BB09002DF9A6 /* QuizBrain.m in Sources */,
+				603AABF01825BF1E002DF9A6 /* QuizCollection.m in Sources */,
 				6077BCA4181765C2005FFF1D /* LoginViewDelegate.m in Sources */,
+				603AABE11825873F002DF9A6 /* Answer.m in Sources */,
 				6077BCAA181765C2005FFF1D /* LoginViewController.m in Sources */,
 				6077BD2418176F3F005FFF1D /* JSONAPI.m in Sources */,
 				6077BD2018176F3F005FFF1D /* JSONModelArray.m in Sources */,

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QuizBrain.h"
+
 
 @interface QuizViewController : UIViewController
+@property (nonatomic,strong) QuizBrain *brain;
 
 @end
