@@ -15,4 +15,6 @@
 @property NSArray<Question, ConvertOnDemand>* questions;
 @property NSString* description;
 @property Course* course;
+
+-(NSString *) toString;
 @end

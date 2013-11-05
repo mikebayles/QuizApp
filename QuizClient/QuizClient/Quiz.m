@@ -9,4 +9,11 @@
 #import "Quiz.h"
 
 @implementation Quiz
+@synthesize description;
+@synthesize course;
+
+-(NSString *) toString
+{
+    return [NSString stringWithFormat:@"%@ - %@",self.course.id, self.description];
+}
 @end

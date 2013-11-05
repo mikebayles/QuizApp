@@ -142,9 +142,7 @@ public class MySQLHelper
 				Quiz quiz = new Quiz(rs.getInt("id"), rs.getString("description"), new Course(rs.getString("course_code"), rs.getString("course_description")));
 				quiz.setQuestions(getQuestions(quiz.getId()));
 				ret.add(quiz);
-			}
-			
-			ret.add(null);
+			}		
 		} 
 		catch (SQLException e)
 		{

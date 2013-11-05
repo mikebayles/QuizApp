@@ -24,7 +24,10 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    tableData = [self.brain getQuizes].quizes;
+    
+    NSMutableArray<Quiz>* quizes = [[self.brain getQuizes].quizes mutableCopy];
+    
+    tableData = quizes;
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -48,7 +51,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] toString];
     return cell;
 }
 
