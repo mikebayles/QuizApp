@@ -203,6 +203,24 @@
             </objects>
             <point key="canvasLocation" x="285" y="186"/>
         </scene>
+        <!--Quiz Take View Controller-->
+        <scene sceneID="UqH-cx-0yW">
+            <objects>
+                <viewController id="ctI-XY-ZdR" customClass="QuizTakeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bvU-Ew-F2R"/>
+                        <viewControllerLayoutGuide type="bottom" id="U8b-jP-Yt5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8P9-rq-1ds">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ce-1P-qjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="963"/>
+        </scene>
         <!--View Controller - Grades-->
         <scene sceneID="39d-84-FEc">
             <objects>
@@ -220,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RES-Ue-O8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="819" y="1211"/>
+            <point key="canvasLocation" x="609" y="1201"/>
         </scene>
         <!--Quiz View Controller - Quizes-->
         <scene sceneID="aUZ-pX-vDw">
@@ -247,6 +265,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quizes" id="EIp-ND-o97"/>
+                    <connections>
+                        <segue destination="ctI-XY-ZdR" kind="modal" identifier="TakeQuiz" id="OR5-sh-TJr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMS-ch-Mz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

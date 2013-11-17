@@ -9,6 +9,7 @@
 #import "LoginBrain.h"
 #import "Auth.h"
 #import "QuizNetworkHelp.h"
+#import "QuizDataStore.h"
 
 @implementation LoginBrain
 
@@ -21,6 +22,8 @@
     NSString* message = [NSString stringWithFormat:@"json=%@",[auth toJSONString]];
     
     NSString* response = [QuizNetworkHelp makePostRequest:message withServlet: @"LoginServlet"];
+
+    [QuizDataStore instance].auth = auth;
     
     return [response isEqualToString:@"TRUE"];
 }

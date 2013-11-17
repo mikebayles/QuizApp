@@ -8,6 +8,7 @@
 
 #import "QuizBrain.h"
 #import "QuizNetworkHelp.h"
+#import "QuizDataStore.h"
 
 @implementation QuizBrain
 QuizCollection* quizes;
@@ -27,6 +28,9 @@ QuizCollection* quizes;
     
     NSError *err;
     
-    return [[QuizCollection alloc] initWithString:response error: &err ];
+    QuizCollection* ret = [[QuizCollection alloc] initWithString:response error: &err ];
+    
+    [QuizDataStore instance].quizes = ret;
+    return ret;
 }
 @end

@@ -40,6 +40,8 @@
 		6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1918176F3F005FFF1D /* JSONModel+networking.m */; };
 		6077BD2718176F3F005FFF1D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */; };
 		6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */; };
+		60D1E3B0182BF1A1008763BE /* QuizTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */; };
+		60D1E3B3182BF297008763BE /* QuizDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1E3B2182BF297008763BE /* QuizDataStore.m */; };
 		60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFEB18209A07006732E6 /* QuizViewController.m */; };
 		60EBEFEF1820A4F9006732E6 /* QuizNetworkHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */; };
 		60EBEFF21820A67D006732E6 /* ProfileBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFF11820A67D006732E6 /* ProfileBrain.m */; };
@@ -158,6 +160,10 @@
 		6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		6077BD1D18176F3F005FFF1D /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTakeViewController.h; sourceTree = "<group>"; };
+		60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTakeViewController.m; sourceTree = "<group>"; };
+		60D1E3B1182BF297008763BE /* QuizDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizDataStore.h; sourceTree = "<group>"; };
+		60D1E3B2182BF297008763BE /* QuizDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizDataStore.m; sourceTree = "<group>"; };
 		60EBEFEA18209A07006732E6 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuizViewController.h; path = ../QuizViewController.h; sourceTree = "<group>"; };
 		60EBEFEB18209A07006732E6 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuizViewController.m; path = ../QuizViewController.m; sourceTree = "<group>"; };
 		60EBEFED1820A4F9006732E6 /* QuizNetworkHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizNetworkHelp.h; sourceTree = "<group>"; };
@@ -256,6 +262,10 @@
 				60EBEFF11820A67D006732E6 /* ProfileBrain.m */,
 				603AABEB1825BB09002DF9A6 /* QuizBrain.h */,
 				603AABEC1825BB09002DF9A6 /* QuizBrain.m */,
+				60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */,
+				60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */,
+				60D1E3B1182BF297008763BE /* QuizDataStore.h */,
+				60D1E3B2182BF297008763BE /* QuizDataStore.m */,
 			);
 			path = QuizClient;
 			sourceTree = "<group>";
@@ -598,6 +608,7 @@
 				6077BD2218176F3F005FFF1D /* JSONModelError.m in Sources */,
 				6077BCA0181765C2005FFF1D /* main.m in Sources */,
 				60EBEFEF1820A4F9006732E6 /* QuizNetworkHelp.m in Sources */,
+				60D1E3B3182BF297008763BE /* QuizDataStore.m in Sources */,
 				603AABE718258A0F002DF9A6 /* Quiz.m in Sources */,
 				6077BD1F18176F3F005FFF1D /* JSONModel.m in Sources */,
 				6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */,
@@ -612,6 +623,7 @@
 				6077BCA4181765C2005FFF1D /* LoginViewDelegate.m in Sources */,
 				603AABE11825873F002DF9A6 /* Answer.m in Sources */,
 				6077BCAA181765C2005FFF1D /* LoginViewController.m in Sources */,
+				60D1E3B0182BF1A1008763BE /* QuizTakeViewController.m in Sources */,
 				6077BD2418176F3F005FFF1D /* JSONAPI.m in Sources */,
 				6077BD2018176F3F005FFF1D /* JSONModelArray.m in Sources */,
 				60F1577C181CE43600FEA411 /* UserSettingsController.m in Sources */,
