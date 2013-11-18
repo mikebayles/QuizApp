@@ -18,7 +18,6 @@
 		6077BC98181765C1005FFF1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC97181765C1005FFF1D /* UIKit.framework */; };
 		6077BC9E181765C2005FFF1D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6077BC9C181765C2005FFF1D /* InfoPlist.strings */; };
 		6077BCA0181765C2005FFF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BC9F181765C2005FFF1D /* main.m */; };
-		6077BCA4181765C2005FFF1D /* LoginViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BCA3181765C2005FFF1D /* LoginViewDelegate.m */; };
 		6077BCA7181765C2005FFF1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6077BCA5181765C2005FFF1D /* Main.storyboard */; };
 		6077BCAA181765C2005FFF1D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BCA9181765C2005FFF1D /* LoginViewController.m */; };
 		6077BCAC181765C2005FFF1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6077BCAB181765C2005FFF1D /* Images.xcassets */; };
@@ -40,6 +39,7 @@
 		6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1918176F3F005FFF1D /* JSONModel+networking.m */; };
 		6077BD2718176F3F005FFF1D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */; };
 		6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */; };
+		60AA8360183982E70081C464 /* LoginViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AA835F183982E70081C464 /* LoginViewDelegate.m */; };
 		60D1E3B0182BF1A1008763BE /* QuizTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */; };
 		60D1E3B3182BF297008763BE /* QuizDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1E3B2182BF297008763BE /* QuizDataStore.m */; };
 		60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFEB18209A07006732E6 /* QuizViewController.m */; };
@@ -81,8 +81,6 @@
 		6077BC9D181765C2005FFF1D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6077BC9F181765C2005FFF1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6077BCA1181765C2005FFF1D /* QuizClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuizClient-Prefix.pch"; sourceTree = "<group>"; };
-		6077BCA2181765C2005FFF1D /* LoginViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
-		6077BCA3181765C2005FFF1D /* LoginViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewDelegate.m; sourceTree = "<group>"; };
 		6077BCA6181765C2005FFF1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6077BCA8181765C2005FFF1D /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		6077BCA9181765C2005FFF1D /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -160,6 +158,8 @@
 		6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		6077BD1D18176F3F005FFF1D /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
 		6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		60AA835E183982E70081C464 /* LoginViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
+		60AA835F183982E70081C464 /* LoginViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewDelegate.m; sourceTree = "<group>"; };
 		60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTakeViewController.h; sourceTree = "<group>"; };
 		60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTakeViewController.m; sourceTree = "<group>"; };
 		60D1E3B1182BF297008763BE /* QuizDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizDataStore.h; sourceTree = "<group>"; };
@@ -240,32 +240,13 @@
 		6077BC99181765C1005FFF1D /* QuizClient */ = {
 			isa = PBXGroup;
 			children = (
-				60EBEFEA18209A07006732E6 /* QuizViewController.h */,
-				60EBEFEB18209A07006732E6 /* QuizViewController.m */,
+				60AA83611839831A0081C464 /* Common */,
+				60AA835D1839817B0081C464 /* ViewControllers */,
+				60AA835C183981630081C464 /* Brains */,
 				6077BCCD18176D66005FFF1D /* Models */,
-				6077BCA2181765C2005FFF1D /* LoginViewDelegate.h */,
-				6077BCA3181765C2005FFF1D /* LoginViewDelegate.m */,
 				6077BCA5181765C2005FFF1D /* Main.storyboard */,
-				6077BCA8181765C2005FFF1D /* LoginViewController.h */,
-				6077BCA9181765C2005FFF1D /* LoginViewController.m */,
 				6077BCAB181765C2005FFF1D /* Images.xcassets */,
 				6077BC9A181765C2005FFF1D /* Supporting Files */,
-				6077BCC8181768F1005FFF1D /* LoginBrain.h */,
-				6077BCC9181768F1005FFF1D /* LoginBrain.m */,
-				60F15777181CDF4000FEA411 /* QuizHomeController.h */,
-				60F15778181CDF4000FEA411 /* QuizHomeController.m */,
-				60F1577A181CE43600FEA411 /* UserSettingsController.h */,
-				60F1577B181CE43600FEA411 /* UserSettingsController.m */,
-				60EBEFED1820A4F9006732E6 /* QuizNetworkHelp.h */,
-				60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */,
-				60EBEFF01820A67D006732E6 /* ProfileBrain.h */,
-				60EBEFF11820A67D006732E6 /* ProfileBrain.m */,
-				603AABEB1825BB09002DF9A6 /* QuizBrain.h */,
-				603AABEC1825BB09002DF9A6 /* QuizBrain.m */,
-				60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */,
-				60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */,
-				60D1E3B1182BF297008763BE /* QuizDataStore.h */,
-				60D1E3B2182BF297008763BE /* QuizDataStore.m */,
 			);
 			path = QuizClient;
 			sourceTree = "<group>";
@@ -500,6 +481,49 @@
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
+		60AA835C183981630081C464 /* Brains */ = {
+			isa = PBXGroup;
+			children = (
+				6077BCC8181768F1005FFF1D /* LoginBrain.h */,
+				6077BCC9181768F1005FFF1D /* LoginBrain.m */,
+				60EBEFF01820A67D006732E6 /* ProfileBrain.h */,
+				60EBEFF11820A67D006732E6 /* ProfileBrain.m */,
+				603AABEB1825BB09002DF9A6 /* QuizBrain.h */,
+				603AABEC1825BB09002DF9A6 /* QuizBrain.m */,
+			);
+			name = Brains;
+			sourceTree = "<group>";
+		};
+		60AA835D1839817B0081C464 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				60AA835E183982E70081C464 /* LoginViewDelegate.h */,
+				60AA835F183982E70081C464 /* LoginViewDelegate.m */,
+				60EBEFEA18209A07006732E6 /* QuizViewController.h */,
+				60EBEFEB18209A07006732E6 /* QuizViewController.m */,
+				6077BCA8181765C2005FFF1D /* LoginViewController.h */,
+				6077BCA9181765C2005FFF1D /* LoginViewController.m */,
+				60F15777181CDF4000FEA411 /* QuizHomeController.h */,
+				60F15778181CDF4000FEA411 /* QuizHomeController.m */,
+				60F1577A181CE43600FEA411 /* UserSettingsController.h */,
+				60F1577B181CE43600FEA411 /* UserSettingsController.m */,
+				60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */,
+				60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		60AA83611839831A0081C464 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				60EBEFED1820A4F9006732E6 /* QuizNetworkHelp.h */,
+				60EBEFEE1820A4F9006732E6 /* QuizNetworkHelp.m */,
+				60D1E3B1182BF297008763BE /* QuizDataStore.h */,
+				60D1E3B2182BF297008763BE /* QuizDataStore.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,6 +632,7 @@
 				6077BD2218176F3F005FFF1D /* JSONModelError.m in Sources */,
 				6077BCA0181765C2005FFF1D /* main.m in Sources */,
 				60EBEFEF1820A4F9006732E6 /* QuizNetworkHelp.m in Sources */,
+				60AA8360183982E70081C464 /* LoginViewDelegate.m in Sources */,
 				60D1E3B3182BF297008763BE /* QuizDataStore.m in Sources */,
 				603AABE718258A0F002DF9A6 /* Quiz.m in Sources */,
 				6077BD1F18176F3F005FFF1D /* JSONModel.m in Sources */,
@@ -620,7 +645,6 @@
 				60EBEFF21820A67D006732E6 /* ProfileBrain.m in Sources */,
 				603AABED1825BB09002DF9A6 /* QuizBrain.m in Sources */,
 				603AABF01825BF1E002DF9A6 /* QuizCollection.m in Sources */,
-				6077BCA4181765C2005FFF1D /* LoginViewDelegate.m in Sources */,
 				603AABE11825873F002DF9A6 /* Answer.m in Sources */,
 				6077BCAA181765C2005FFF1D /* LoginViewController.m in Sources */,
 				60D1E3B0182BF1A1008763BE /* QuizTakeViewController.m in Sources */,

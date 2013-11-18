@@ -30,11 +30,6 @@
     tableData = quizes;
 }
 
--(void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    //[self.table setDataSource:[self.brain getQuizes].quizes];
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface QuizTakeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segAnswer;
 
 @end

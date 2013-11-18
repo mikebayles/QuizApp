@@ -162,6 +162,8 @@ public class MySQLHelper
 		{
 			Question question = new Question(rs.getInt("id"), rs.getString("text"));
 			question.setAnswers(getAnswers(question.getId()));
+			
+			ret.add(question);
 		}
 		
 		return ret;
