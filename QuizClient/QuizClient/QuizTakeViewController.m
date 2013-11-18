@@ -12,35 +12,29 @@
 
 @implementation QuizTakeViewController
 {
-    NSArray* tableData;
+    NSMutableArray* tableData;
     NSArray* letters;
+    int questionIndex;
+    Quiz* currentQuiz;
+    Question* currentQuestion;
 }
 @synthesize segAnswer = _segAnswer;
-
-
-
+@synthesize btnNext = _btnNext;
+@synthesize btnPrevious = _btnPrevious;
+@synthesize quizIndex = _quizIndex;
+@synthesize tblQuestion = _tblQuestion;
+@synthesize lblQuestion =_lblQuestion;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    questionIndex = 0;
     
-    letters = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D","E",@"F", nil];
-    Quiz* currentQuiz = [[QuizDataStore instance].quizes.quizes objectAtIndex:0];
-                         
-    Question* currentQuestion = [currentQuiz.questions objectAtIndex:0];
-                         
-    [self.segAnswer removeAllSegments];
-    NSMutableArray * tempData = [[NSMutableArray alloc] init];
-    for(int i = 0; i < currentQuestion.answers.count; i++)
-    {
-        Answer* currentAnswer = [currentQuestion.answers objectAtIndex:i];
-        
-        NSString* text = [NSString stringWithFormat:@"%@ - %@",[letters objectAtIndex:i],currentAnswer.text];
-        [tempData addObject:text];
-        
-        [self.segAnswer insertSegmentWithTitle:[letters objectAtIndex:i] atIndex:i animated:YES];
-    }
+    letters = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F", nil];
+    currentQuiz = [[QuizDataStore instance].quizes.quizes objectAtIndex:0];
     
-    tableData = tempData;
+    self.tblQuestion.layer.borderWidth = 1.0f;
+                         
+    [self refreshData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -61,6 +55,41 @@
     cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] description];
     cell.textLabel.font = [UIFont systemFontOfSize:8.0];
     return cell;
+}
+
+-(void) refreshData
+{
+    [self.segAnswer removeAllSegments];
+    tableData = [[NSMutableArray alloc] init];
+    currentQuestion = [currentQuiz.questions objectAtIndex:questionIndex];
+    self.lblQuestion.text = currentQuestion.text;
+    for(int i = 0; i < currentQuestion.answers.count; i++)
+    {
+        Answer* currentAnswer = [currentQuestion.answers objectAtIndex:i];
+        
+        NSString* text = [NSString stringWithFormat:@"%@ - %@",[letters objectAtIndex:i],currentAnswer.text];
+        [self.segAnswer insertSegmentWithTitle:[letters objectAtIndex:i] atIndex:i animated:YES];
+        [tableData addObject:text];
+    }
+    
+    [self refreshButtons];
+    [self.tblQuestion reloadData];
+}
+
+-(void) refreshButtons
+{
+    self.btnPrevious.hidden = questionIndex == 0;
+    self.btnNext.hidden = questionIndex == tableData.count - 1;
+}
+- (IBAction)btnNextPressed:(id)sender
+{
+    questionIndex++;
+    [self refreshData];
+}
+- (IBAction)btnPreviousPressed:(id)sender
+{
+    questionIndex--;
+    [self refreshData];
 }
 
 

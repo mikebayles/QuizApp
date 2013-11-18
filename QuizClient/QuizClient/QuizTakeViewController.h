@@ -10,5 +10,9 @@
 
 @interface QuizTakeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segAnswer;
-
+@property (weak, nonatomic) IBOutlet UIButton *btnNext;
+@property (weak, nonatomic) IBOutlet UIButton *btnPrevious;
+@property (weak, nonatomic) IBOutlet UITableView *tblQuestion;
+@property (weak, nonatomic) IBOutlet UILabel *lblQuestion;
+@property int quizIndex;
 @end
