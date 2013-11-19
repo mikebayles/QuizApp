@@ -130,6 +130,8 @@
         
         NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"QuizServlet"];
         
+        [self performSegueWithIdentifier:@"viewGrades" sender:self];
+        
     }
 }
 @end

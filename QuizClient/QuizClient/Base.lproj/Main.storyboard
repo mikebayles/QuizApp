@@ -232,7 +232,6 @@
                                 </state>
                                 <connections>
                                     <action selector="btnNextPressed:" destination="ctI-XY-ZdR" eventType="touchUpInside" id="pcI-hr-oPS"/>
-                                    <segue destination="mwT-hC-ilW" kind="modal" id="mLl-xu-LZQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05q-VP-xfE">
@@ -259,11 +258,12 @@
                         <outlet property="btnPrevious" destination="05q-VP-xfE" id="7Kg-MJ-082"/>
                         <outlet property="lblQuestion" destination="5eE-u6-CCC" id="FEP-jA-Yjn"/>
                         <outlet property="tblQuestion" destination="Rcy-Nd-iGb" id="NQU-eY-z9g"/>
+                        <segue destination="mwT-hC-ilW" kind="modal" identifier="viewGrades" id="rBl-BO-iXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ce-1P-qjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="518"/>
+            <point key="canvasLocation" x="1369" y="462"/>
         </scene>
         <!--View Controller - Grades-->
         <scene sceneID="39d-84-FEc">
@@ -324,6 +324,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Y9c-zE-7hR"/>
+        <segue reference="rBl-BO-iXa"/>
     </inferredMetricsTieBreakers>
 </document>
