@@ -13,6 +13,8 @@
 		603AABEA18258AE1002DF9A6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE918258AE1002DF9A6 /* Course.m */; };
 		603AABED1825BB09002DF9A6 /* QuizBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABEC1825BB09002DF9A6 /* QuizBrain.m */; };
 		603AABF01825BF1E002DF9A6 /* QuizCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABEF1825BF1E002DF9A6 /* QuizCollection.m */; };
+		6073875A183AFB9900038137 /* StudentAnswer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60738759183AFB9900038137 /* StudentAnswer.m */; };
+		6073875D183B03B600038137 /* StudentAnswerCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6073875C183B03B600038137 /* StudentAnswerCollection.m */; };
 		6077BC94181765C1005FFF1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC93181765C1005FFF1D /* Foundation.framework */; };
 		6077BC96181765C1005FFF1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC95181765C1005FFF1D /* CoreGraphics.framework */; };
 		6077BC98181765C1005FFF1D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6077BC97181765C1005FFF1D /* UIKit.framework */; };
@@ -73,6 +75,10 @@
 		603AABEC1825BB09002DF9A6 /* QuizBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizBrain.m; sourceTree = "<group>"; };
 		603AABEE1825BF1E002DF9A6 /* QuizCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizCollection.h; sourceTree = "<group>"; };
 		603AABEF1825BF1E002DF9A6 /* QuizCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizCollection.m; sourceTree = "<group>"; };
+		60738758183AFB9900038137 /* StudentAnswer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentAnswer.h; sourceTree = "<group>"; };
+		60738759183AFB9900038137 /* StudentAnswer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentAnswer.m; sourceTree = "<group>"; };
+		6073875B183B03B600038137 /* StudentAnswerCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentAnswerCollection.h; sourceTree = "<group>"; };
+		6073875C183B03B600038137 /* StudentAnswerCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentAnswerCollection.m; sourceTree = "<group>"; };
 		6077BC90181765C1005FFF1D /* QuizClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6077BC93181765C1005FFF1D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6077BC95181765C1005FFF1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -297,6 +303,10 @@
 				603AABE918258AE1002DF9A6 /* Course.m */,
 				603AABEE1825BF1E002DF9A6 /* QuizCollection.h */,
 				603AABEF1825BF1E002DF9A6 /* QuizCollection.m */,
+				60738758183AFB9900038137 /* StudentAnswer.h */,
+				60738759183AFB9900038137 /* StudentAnswer.m */,
+				6073875B183B03B600038137 /* StudentAnswerCollection.h */,
+				6073875C183B03B600038137 /* StudentAnswerCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -639,6 +649,7 @@
 				6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */,
 				6077BD2318176F3F005FFF1D /* NSArray+JSONModel.m in Sources */,
 				603AABEA18258AE1002DF9A6 /* Course.m in Sources */,
+				6073875D183B03B600038137 /* StudentAnswerCollection.m in Sources */,
 				60EBEFF51820B9F4006732E6 /* Profile.m in Sources */,
 				60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */,
 				6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */,
@@ -651,6 +662,7 @@
 				6077BD2418176F3F005FFF1D /* JSONAPI.m in Sources */,
 				6077BD2018176F3F005FFF1D /* JSONModelArray.m in Sources */,
 				60F1577C181CE43600FEA411 /* UserSettingsController.m in Sources */,
+				6073875A183AFB9900038137 /* StudentAnswer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

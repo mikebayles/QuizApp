@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import com.common.MySQLHelper;
 import com.google.gson.Gson;
 import com.model.QuizCollection;
+import com.model.StudentAnswer;
+import com.model.StudentAnswerCollection;
 
 /**
  * Servlet implementation class QuizServlet
@@ -48,11 +50,19 @@ public class QuizServlet extends HttpServlet {
 		Gson gson = new Gson();
 		
 		String method = request.getParameter("method");
-		if(method.equals("get"))
+		if(method.equalsIgnoreCase("get"))
 		{
 			QuizCollection quizes = new QuizCollection();
 			quizes.setQuizes(mySQLHelper.getQuizes(session.getAttribute("username").toString()));
 			writer.print(gson.toJson(quizes,QuizCollection.class));
+		}
+		else if(method.equalsIgnoreCase("submit"))
+		{
+			StudentAnswerCollection studentAnswers = gson.fromJson(request.getParameter("json"), StudentAnswerCollection.class);
+			for(StudentAnswer studentAnswer : studentAnswers.getStudentAnswers())
+			{
+				MySQLHelper.getInstance().insertStudentAnswer(studentAnswer);
+			}
 		}
 	}
 

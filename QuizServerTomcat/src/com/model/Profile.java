@@ -48,6 +48,4 @@ public class Profile
 	{
 		this.auth = auth;
 	}
-	
-	
 }

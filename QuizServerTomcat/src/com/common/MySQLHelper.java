@@ -13,6 +13,7 @@ import com.model.Course;
 import com.model.Profile;
 import com.model.Question;
 import com.model.Quiz;
+import com.model.StudentAnswer;
 
 public class MySQLHelper
 {
@@ -182,5 +183,11 @@ public class MySQLHelper
 		}
 		
 		return ret;
+	}
+	
+	public void insertStudentAnswer(StudentAnswer studentAnswer)
+	{
+		String sql = String.format("INSERT INTO q_student_answer values('%s',%s)", studentAnswer.getStudent(), studentAnswer.getAnswer());
+		executeNonQuery(sql);
 	}
 }

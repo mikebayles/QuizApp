@@ -8,15 +8,20 @@
 
 #import "QuizTakeViewController.h"
 #import "QuizDataStore.h"
+#import "StudentAnswer.h"
+#import "StudentAnswerCollection.h"
+#import "QuizNetworkHelp.h"
 
 
 @implementation QuizTakeViewController
 {
     NSMutableArray* tableData;
+    NSMutableArray* studentAnswers;
     NSArray* letters;
     int questionIndex;
     Quiz* currentQuiz;
     Question* currentQuestion;
+    Answer* currentAnswer;
 }
 @synthesize segAnswer = _segAnswer;
 @synthesize btnNext = _btnNext;
@@ -30,6 +35,7 @@
     questionIndex = 0;
     
     letters = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F", nil];
+    studentAnswers = [[NSMutableArray alloc] init];
     currentQuiz = [[QuizDataStore instance].quizes.quizes objectAtIndex:0];
     
     self.tblQuestion.layer.borderWidth = 1.0f;
@@ -57,15 +63,26 @@
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//self.segAnswer.selectedSegmentIndex = indexPath.row;
+    StudentAnswer* stdAnswer = [[StudentAnswer alloc] init];
+    stdAnswer.student = [QuizDataStore instance].auth.username;
+    stdAnswer.answer = ((Answer *)[currentQuestion.answers objectAtIndex:indexPath.row]).id;
+    [studentAnswers insertObject:stdAnswer atIndex:questionIndex];
+}
+
+
 -(void) refreshData
 {
-    [self.segAnswer removeAllSegments];
+    //[self.segAnswer removeAllSegments];
     tableData = [[NSMutableArray alloc] init];
     currentQuestion = [currentQuiz.questions objectAtIndex:questionIndex];
     self.lblQuestion.text = currentQuestion.text;
     for(int i = 0; i < currentQuestion.answers.count; i++)
     {
-        Answer* currentAnswer = [currentQuestion.answers objectAtIndex:i];
+        currentAnswer = [currentQuestion.answers objectAtIndex:i];
         
         NSString* text = [NSString stringWithFormat:@"%@ - %@",[letters objectAtIndex:i],currentAnswer.text];
         [self.segAnswer insertSegmentWithTitle:[letters objectAtIndex:i] atIndex:i animated:YES];
@@ -79,12 +96,24 @@
 -(void) refreshButtons
 {
     self.btnPrevious.hidden = questionIndex == 0;
-    self.btnNext.hidden = questionIndex == tableData.count - 1;
+    //self.btnNext.hidden = questionIndex == tableData.count - 1;
+    if(questionIndex == tableData.count - 1)
+        [self.btnNext setTitle:@"Submit" forState:UIControlStateNormal];
+    else
+        [self.btnNext setTitle:@"Next Question" forState:UIControlStateNormal];
 }
 - (IBAction)btnNextPressed:(id)sender
 {
-    questionIndex++;
-    [self refreshData];
+    if(questionIndex == tableData.count - 1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait" message:@"Are you sure you want to submit?  This action cannot be undone" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alert show];
+    }
+    else
+    {
+        questionIndex++;
+        [self refreshData];
+    }
 }
 - (IBAction)btnPreviousPressed:(id)sender
 {
@@ -92,5 +121,15 @@
     [self refreshData];
 }
 
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1)
+    {
+        StudentAnswerCollection*  collection = [[StudentAnswerCollection alloc] init];
+        collection.studentAnswers = studentAnswers;
+        NSString* message = [NSString stringWithFormat:@"method=submit&json=%@",[collection toJSONString]];
+        
+        NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"QuizServlet"];
+        
+    }
+}
 @end
