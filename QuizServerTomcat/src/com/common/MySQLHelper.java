@@ -190,4 +190,20 @@ public class MySQLHelper
 		String sql = String.format("INSERT INTO q_student_answer values('%s',%s)", studentAnswer.getStudent(), studentAnswer.getAnswer());
 		executeNonQuery(sql);
 	}
+
+	public boolean isTeacher(String username)
+	{
+		String query = String.format("SELECT * FROM q_users where username = '%s'",username);
+		ResultSet rs = executeSelect(query);
+		try
+		{
+			rs.next();
+			return rs.getInt("is_teacher") == 1;
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

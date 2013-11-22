@@ -19,11 +19,19 @@
     auth.username = username;
     auth.password = password;
     
-    NSString* message = [NSString stringWithFormat:@"json=%@",[auth toJSONString]];
+    NSString* message = [NSString stringWithFormat:@"method=authorize&json=%@",[auth toJSONString]];
     
     NSString* response = [QuizNetworkHelp makePostRequest:message withServlet: @"LoginServlet"];
 
     [QuizDataStore instance].auth = auth;
+    
+    return [response isEqualToString:@"TRUE"];
+}
+
+-(BOOL) isTeacher
+{
+    NSString* message = [NSString stringWithFormat:@"method=isTeacher&json=%@",[[QuizDataStore instance].auth toJSONString]];
+    NSString* response = [QuizNetworkHelp makePostRequest:message withServlet: @"LoginServlet"];
     
     return [response isEqualToString:@"TRUE"];
 }

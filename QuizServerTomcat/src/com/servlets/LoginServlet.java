@@ -43,17 +43,33 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{		
 		PrintWriter writer = response.getWriter();
-		
 		Gson gson = new Gson();
-		Auth auth = gson.fromJson(request.getParameter("json"), Auth.class);
 		MySQLHelper mysqlHelper = MySQLHelper.getInstance();
-		if(mysqlHelper.authorize(auth))
+		Auth auth = gson.fromJson(request.getParameter("json"), Auth.class);
+		
+		String method = request.getParameter("method");
+		if(method.equals("authorize"))
 		{
-			writer.print("TRUE");
-			HttpSession session = request.getSession(true);
-			session.setAttribute("username", auth.getUsername());
+			
+			
+			if(mysqlHelper.authorize(auth))
+			{
+				writer.print("TRUE");
+				HttpSession session = request.getSession(true);
+				session.setAttribute("username", auth.getUsername());
+			}
+			else
+				writer.print("FALSE");	
 		}
-		else
-			writer.print("FALSE");	
+		else if(method.equals("isTeacher"))
+		{
+			if(mysqlHelper.isTeacher(auth.getUsername()))
+			{
+				writer.print("TRUE");
+			
+			}
+			else
+				writer.print("FALSE");	
+		}
 	}
 }

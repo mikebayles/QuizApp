@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600B1552183EF14100269017 /* CreateQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B1551183EF14100269017 /* CreateQuizViewController.m */; };
 		603AABE11825873F002DF9A6 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE01825873F002DF9A6 /* Answer.m */; };
 		603AABE4182587EC002DF9A6 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE3182587EC002DF9A6 /* Question.m */; };
 		603AABE718258A0F002DF9A6 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE618258A0F002DF9A6 /* Quiz.m */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		600B1550183EF14100269017 /* CreateQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateQuizViewController.h; sourceTree = "<group>"; };
+		600B1551183EF14100269017 /* CreateQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuizViewController.m; sourceTree = "<group>"; };
 		603AABDF1825873F002DF9A6 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
 		603AABE01825873F002DF9A6 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		603AABE2182587EB002DF9A6 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 				60F1577B181CE43600FEA411 /* UserSettingsController.m */,
 				60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */,
 				60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */,
+				600B1550183EF14100269017 /* CreateQuizViewController.h */,
+				600B1551183EF14100269017 /* CreateQuizViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */,
 				6077BD2318176F3F005FFF1D /* NSArray+JSONModel.m in Sources */,
 				603AABEA18258AE1002DF9A6 /* Course.m in Sources */,
+				600B1552183EF14100269017 /* CreateQuizViewController.m in Sources */,
 				6073875D183B03B600038137 /* StudentAnswerCollection.m in Sources */,
 				60EBEFF51820B9F4006732E6 /* Profile.m in Sources */,
 				60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */,

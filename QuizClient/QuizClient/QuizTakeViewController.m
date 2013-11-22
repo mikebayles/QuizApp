@@ -16,7 +16,7 @@
 @implementation QuizTakeViewController
 {
     NSMutableArray* tableData;
-    NSMutableArray* studentAnswers;
+    NSMutableArray<StudentAnswer, ConvertOnDemand>* studentAnswers;
     NSArray* letters;
     int questionIndex;
     Quiz* currentQuiz;
@@ -35,7 +35,7 @@
     questionIndex = 0;
     
     letters = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F", nil];
-    studentAnswers = [[NSMutableArray alloc] init];
+    studentAnswers = [NSMutableArray new];
     currentQuiz = [[QuizDataStore instance].quizes.quizes objectAtIndex:0];
     
     self.tblQuestion.layer.borderWidth = 1.0f;

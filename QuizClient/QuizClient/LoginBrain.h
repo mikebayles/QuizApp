@@ -10,4 +10,5 @@
 
 @interface LoginBrain : NSObject
 -(BOOL) authenticate: (NSString*)username :(NSString*) password;
+-(BOOL) isTeacher;
 @end
