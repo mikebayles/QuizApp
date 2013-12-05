@@ -30,7 +30,7 @@
         [self lblStatus].text = @"Success!";
         [self lblStatus].textColor = [UIColor greenColor];
         if([self.brain isTeacher])
-            [self performSegueWithIdentifier:@"createQuizSegue" sender:self];
+            [self performSegueWithIdentifier:@"teacherOptions" sender:self];
         else
             [self performSegueWithIdentifier:@"LoginSuccess" sender:self];
     }

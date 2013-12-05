@@ -14,13 +14,95 @@
 
 @implementation CreateQuizViewController
 @synthesize txtQuestion = _txtQuestion;
-
+@synthesize txtAnswer1 = _txtAnswer1;
+@synthesize txtAnswer2 = _txtAnswer2;
+@synthesize txtAnswer3 = _txtAnswer3;
+@synthesize txtAnswer4 = _txtAnswer4;
+@synthesize txtAnswer5 = _txtAnswer5;
+@synthesize questions = _questions;
+@synthesize segCorrect = _segCorrect;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	self.txtQuestion.layer.borderWidth = 1.0f;
-    [self.txtQuestion becomeFirstResponder];
+    self.questions = [NSMutableArray new];
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.txtQuestion resignFirstResponder];
+    [self.txtAnswer1 resignFirstResponder];
+    [self.txtAnswer2 resignFirstResponder];
+    [self.txtAnswer3 resignFirstResponder];
+    [self.txtAnswer4 resignFirstResponder];
+    [self.txtAnswer5 resignFirstResponder];
+    
 }
 
+- (IBAction)btnNextClicked:(id)sender
+{
+    Question* question = [[Question alloc] init];
+    question.text = self.txtQuestion.text;
+    
+    NSMutableArray* answers = [NSMutableArray new];
+    
+    Answer* answer1 = [[Answer alloc] init];
+    answer1.text = self.txtAnswer1.text;
+    answer1.correct = self.segCorrect.selectedSegmentIndex == 0;
+    
+    Answer* answer2 = [[Answer alloc] init];
+    answer2.text = self.txtAnswer2.text;
+    answer2.correct = self.segCorrect.selectedSegmentIndex == 1;
+    
+    Answer* answer3 = [[Answer alloc] init];
+    answer3.text = self.txtAnswer3.text;
+    answer3.correct = self.segCorrect.selectedSegmentIndex == 2;
+    
+    Answer* answer4 = [[Answer alloc] init];
+    answer4.text = self.txtAnswer4.text;
+    answer4.correct = self.segCorrect.selectedSegmentIndex == 3;
+    
+    Answer* answer5 = [[Answer alloc] init];
+    answer5.text = self.txtAnswer5.text;
+    answer5.correct = self.segCorrect.selectedSegmentIndex == 4;
+    
+    if([answer1.text length] > 0)
+        [answers addObject:answer1];
+    if([answer2.text length] > 0)
+        [answers addObject:answer2];
+    if([answer3.text length] > 0)
+        [answers addObject:answer3];
+    if([answer4.text length] > 0)
+        [answers addObject:answer4];
+    if([answer5.text length] > 0)
+        [answers addObject:answer5];
+    
+    question.answers = [NSArray arrayWithArray:answers];
+    [self.questions addObject:question];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: YES];
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self animateTextField: textField up: NO];
+}
+
+- (void) animateTextField: (UITextField*) textField up: (BOOL) up
+{
+    const int movementDistance = 80; // tweak as needed
+    const float movementDuration = 0.3f; // tweak as needed
+    
+    int movement = (up ? -movementDistance : movementDistance);
+    
+    [UIView beginAnimations: @"anim" context: nil];
+    [UIView setAnimationBeginsFromCurrentState: YES];
+    [UIView setAnimationDuration: movementDuration];
+    self.view.frame = CGRectOffset(self.view.frame, 0, movement);
+    [UIView commitAnimations];
+}
 
 @end

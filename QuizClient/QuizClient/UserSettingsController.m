@@ -20,6 +20,16 @@
 @synthesize txtConfirmPassword = _txtConfirmPassword;
 @synthesize lblPasswordMatch = _lblPasswordMatch;
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self.txtFirstName resignFirstResponder];
+    [self.txtLastsName resignFirstResponder];
+    [self.txtEmail resignFirstResponder];
+    [self.txtPassword resignFirstResponder];
+    [self.txtConfirmPassword resignFirstResponder];
+    
+}
 - (ProfileBrain *) brain
 {
     if(!_brain) _brain = [[ProfileBrain alloc] init];
