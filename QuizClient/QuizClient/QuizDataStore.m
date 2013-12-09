@@ -11,6 +11,7 @@
 @implementation QuizDataStore
 @synthesize auth = auth;
 @synthesize quizes = _quizes;
+@synthesize quizInProgress = _quizInProgress;
 
 static QuizDataStore *gInstance = NULL;
 

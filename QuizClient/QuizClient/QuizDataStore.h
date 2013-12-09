@@ -13,5 +13,6 @@
 @interface QuizDataStore : NSObject
 @property Auth* auth;
 @property QuizCollection* quizes;
+@property Quiz* quizInProgress;
 + (QuizDataStore *)instance;
 @end

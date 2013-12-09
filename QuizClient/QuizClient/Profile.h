@@ -10,6 +10,7 @@
 #import "JSONModel.h"
 #import "Auth.h"
 
+@protocol Profile @end
 @interface Profile : JSONModel
 
 @property NSString *firstname;

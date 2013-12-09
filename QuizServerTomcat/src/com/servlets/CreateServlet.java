@@ -8,22 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import com.common.MySQLHelper;
 import com.google.gson.Gson;
-import com.model.Profile;
+import com.model.CourseCollection;
 
 /**
- * Servlet implementation class ProfileServlet
+ * Servlet implementation class CreateServlet
  */
-@WebServlet("/ProfileServlet")
-public class ProfileServlet extends HttpServlet {
+@WebServlet("/CreateServlet")
+public class CreateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProfileServlet() 
+    public CreateServlet() 
     {
         super();
         // TODO Auto-generated constructor stub
@@ -33,7 +32,7 @@ public class ProfileServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
+	{		
 		doPost(request, response);
 	}
 
@@ -42,21 +41,18 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		HttpSession session = request.getSession();
+		//HttpSession session = request.getSession();
 		PrintWriter writer = response.getWriter();
 		MySQLHelper mySQLHelper = MySQLHelper.getInstance();
 		Gson gson = new Gson();
 		
 		String method = request.getParameter("method");
-		if(method.equals("update"))
+		if(method.equals("getCourses"))
 		{
-			Profile prof = gson.fromJson(request.getParameter("json"), Profile.class);
-			prof.getAuth().setUsername(session.getAttribute("username").toString());
-			writer.println(mySQLHelper.setProfile(prof));
+			CourseCollection courses = new CourseCollection();
+			courses.setCourses(mySQLHelper.getCourses());
+			writer.print(gson.toJson(courses,CourseCollection.class));
 		}
-		else
-			writer.print(gson.toJson(mySQLHelper.getProfile(session.getAttribute("username").toString()),Profile.class));
-		// TODO Auto-generated method stub
 	}
 
 }

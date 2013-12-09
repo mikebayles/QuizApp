@@ -7,10 +7,8 @@
 //
 
 #import "CreateQuizViewController.h"
+#import "QuizDataStore.h"
 
-@interface CreateQuizViewController ()
-
-@end
 
 @implementation CreateQuizViewController
 @synthesize txtQuestion = _txtQuestion;
@@ -38,7 +36,7 @@
     
 }
 
-- (IBAction)btnNextClicked:(id)sender
+-(void) createQuestion
 {
     Question* question = [[Question alloc] init];
     question.text = self.txtQuestion.text;
@@ -77,7 +75,20 @@
         [answers addObject:answer5];
     
     question.answers = [NSArray arrayWithArray:answers];
-    [self.questions addObject:question];
+    if(answers.count > 0)
+        [self.questions addObject:question];
+}
+
+- (IBAction)btnNextClicked:(id)sender
+{
+    [self createQuestion];
+    [self.txtAnswer1 setText:@""];
+    [self.txtAnswer2 setText:@""];
+    [self.txtAnswer3 setText:@""];
+    [self.txtAnswer4 setText:@""];
+    [self.txtAnswer5 setText:@""];
+    
+    self.segCorrect.selectedSegmentIndex = 0;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -103,6 +114,15 @@
     [UIView setAnimationDuration: movementDuration];
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
+}
+- (IBAction)btnSubmit:(id)sender
+{
+    [self createQuestion];
+    
+    Quiz* quiz = [QuizDataStore instance].quizInProgress;
+    quiz.questions = self.questions;
+    
+    
 }
 
 @end

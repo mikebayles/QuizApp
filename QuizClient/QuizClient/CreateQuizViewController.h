@@ -17,5 +17,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtAnswer4;
 @property (weak, nonatomic) IBOutlet UITextField *txtAnswer5;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segCorrect;
-@property NSMutableArray<Question> *questions;
+@property NSMutableArray<Question, ConvertOnDemand> *questions;
 @end

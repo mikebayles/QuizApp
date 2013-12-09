@@ -206,4 +206,24 @@ public class MySQLHelper
 			return false;
 		}
 	}
+
+	public List<Course> getCourses()
+	{
+		List<Course> ret = new ArrayList<Course>();
+		String query = String.format("SELECT * FROM q_course");	
+		try
+		{
+			ResultSet rs = executeSelect(query);
+			while(rs.next())
+			{
+				Course course = new Course(rs.getString("course_code"),rs.getString("course_description"));
+				ret.add(course);
+			}		
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return ret;
+	}
 }
