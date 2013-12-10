@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		600B1552183EF14100269017 /* CreateQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600B1551183EF14100269017 /* CreateQuizViewController.m */; };
+		6012E2F41856434500D40C71 /* QuizCreateBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6012E2F31856434500D40C71 /* QuizCreateBrain.m */; };
 		603AABE11825873F002DF9A6 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE01825873F002DF9A6 /* Answer.m */; };
 		603AABE4182587EC002DF9A6 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE3182587EC002DF9A6 /* Question.m */; };
 		603AABE718258A0F002DF9A6 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 603AABE618258A0F002DF9A6 /* Quiz.m */; };
@@ -69,6 +70,8 @@
 /* Begin PBXFileReference section */
 		600B1550183EF14100269017 /* CreateQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateQuizViewController.h; sourceTree = "<group>"; };
 		600B1551183EF14100269017 /* CreateQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuizViewController.m; sourceTree = "<group>"; };
+		6012E2F21856434500D40C71 /* QuizCreateBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizCreateBrain.h; sourceTree = "<group>"; };
+		6012E2F31856434500D40C71 /* QuizCreateBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizCreateBrain.m; sourceTree = "<group>"; };
 		603AABDF1825873F002DF9A6 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
 		603AABE01825873F002DF9A6 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		603AABE2182587EB002DF9A6 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -516,6 +519,8 @@
 				603AABEC1825BB09002DF9A6 /* QuizBrain.m */,
 				60F162B318558940004899B9 /* QuizInitiatorBrain.h */,
 				60F162B418558940004899B9 /* QuizInitiatorBrain.m */,
+				6012E2F21856434500D40C71 /* QuizCreateBrain.h */,
+				6012E2F31856434500D40C71 /* QuizCreateBrain.m */,
 			);
 			name = Brains;
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 				60F162B818558A3D004899B9 /* CourseCollection.m in Sources */,
 				6073875D183B03B600038137 /* StudentAnswerCollection.m in Sources */,
 				60F162B218558250004899B9 /* QuizInitiator.m in Sources */,
+				6012E2F41856434500D40C71 /* QuizCreateBrain.m in Sources */,
 				60EBEFF51820B9F4006732E6 /* Profile.m in Sources */,
 				60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */,
 				6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */,

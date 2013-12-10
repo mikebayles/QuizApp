@@ -11,4 +11,5 @@
 @interface Course : JSONModel
 @property NSString* id;
 @property NSString* description;
+@property NSString* teacher;
 @end

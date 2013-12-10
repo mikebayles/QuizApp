@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuizClient/QuizTakeViewController.m"
-            timestampString = "406522480.20016"
+            timestampString = "408333264.412451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "-alertView:clickedButtonAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,7 +372,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuizClient/QuizTakeViewController.m"
-            timestampString = "406521558.399904"
+            timestampString = "408333264.412451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "120"
@@ -466,22 +466,6 @@
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "-loginPressed:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuizClient/CreateQuizViewController.m"
-            timestampString = "408262903.855012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-textFieldDidBeginEditing:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -582,31 +566,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuizClient/CreateQuizViewController.m"
-            timestampString = "408262903.855012"
+            timestampString = "408310283.717979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-btnSubmit:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuizClient/CreateQuizViewController.m"
-            timestampString = "408262903.855012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-btnSubmit:"
             landmarkType = "5">
          </BreakpointContent>
@@ -617,13 +585,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuizClient/CreateQuizViewController.m"
-            timestampString = "408262942.311973"
+            filePath = "QuizClient/QuizCreateBrain.m"
+            timestampString = "408309209.02012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-btnSubmit:"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-createQuiz:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

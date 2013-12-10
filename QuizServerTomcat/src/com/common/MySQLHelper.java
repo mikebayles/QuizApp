@@ -140,14 +140,13 @@ public class MySQLHelper
 			ResultSet rs = executeSelect(query);
 			while(rs.next())
 			{
-				Quiz quiz = new Quiz(rs.getInt("id"), rs.getString("description"), new Course(rs.getString("course_code"), rs.getString("course_description")));
+				Quiz quiz = new Quiz(rs.getInt("id"), rs.getString("description"), new Course(rs.getString("course_code"), rs.getString("course_description"), rs.getString("teacher")));
 				quiz.setQuestions(getQuestions(quiz.getId()));
 				ret.add(quiz);
 			}		
 		} 
 		catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return ret;
@@ -216,7 +215,7 @@ public class MySQLHelper
 			ResultSet rs = executeSelect(query);
 			while(rs.next())
 			{
-				Course course = new Course(rs.getString("course_code"),rs.getString("course_description"));
+				Course course = new Course(rs.getString("course_code"),rs.getString("course_description"), rs.getString("teacher"));
 				ret.add(course);
 			}		
 		} 
@@ -225,5 +224,81 @@ public class MySQLHelper
 			e.printStackTrace();
 		}
 		return ret;
+	}
+
+	public boolean createQuiz(Quiz quiz)
+	{		
+		try
+		{
+			String insertQuery = String.format("INSERT INTO q_quiz (course, description) values('%s','%s')", quiz.getCourse().getId(),quiz.getDescription());
+			executeNonQuery(insertQuery);
+			
+			
+			String queryForLastID = "select last_insert_id() as last_id from q_quiz";
+			int lastid;
+			
+			ResultSet rs = executeSelect(queryForLastID);
+			rs.next();
+			lastid = rs.getInt("last_id");
+			quiz.setId(lastid);
+			
+			insertQuestions(lastid, quiz.getQuestions());
+			
+			return true;
+		} 
+		catch (SQLException e)
+		{			
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	private void insertQuestions(int quiz, List<Question> questions) throws SQLException
+	{
+		for(Question question : questions)
+		{	
+			String insertQuery = String.format("INSERT INTO q_question (quiz, text) values('%s','%s')", quiz,question.getText());
+			executeNonQuery(insertQuery);
+				
+			String queryForLastID = "select last_insert_id() as last_id from q_question";
+			int lastid;
+			
+			ResultSet rs = executeSelect(queryForLastID);
+			rs.next();
+			lastid = rs.getInt("last_id");
+			question.setId(lastid);
+			
+			insertAnswers(lastid, question.getAnswers());
+		}
+	}
+	
+	private void insertAnswers(int question, List<Answer> answers) throws SQLException
+	{
+		for(Answer answer : answers)
+		{	
+			String insertQuery = String.format("INSERT INTO q_answer (question, text, is_correct) values('%s','%s',%s)", question,answer.getText(),answer.isCorrect() ? 1 : 0);
+			executeNonQuery(insertQuery);				
+		}
+	}
+	
+	public void insertPing(String student, String teacher)
+	{
+		String insertQuery = String.format("INSERT INTO q_ping (student, teacher) values('%s','%s')", student, teacher);
+		executeNonQuery(insertQuery);
+	}
+	
+	public boolean doIHavePing(String teacher)
+	{	
+		try
+		{
+			String query = String.format("SELECT * from q_ping WHERE teacher = '%s'",teacher);
+			ResultSet rs = executeSelect(query);	
+			return rs.next();
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			return false;
+		}
 	}
 }

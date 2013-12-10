@@ -4,11 +4,13 @@ public class Course
 {
 	private String id;
 	private String description;
+	private String teacher;
 	
-	public Course(String id, String description)
+	public Course(String id, String description, String teacher)
 	{
 		this.id = id;
 		this.description = description;
+		this.teacher = teacher;
 	}
 	public String getId()
 	{
@@ -25,6 +27,14 @@ public class Course
 	public void setDescription(String description)
 	{
 		this.description = description;
+	}
+	public String getTeacher()
+	{
+		return teacher;
+	}
+	public void setTeacher(String teacher)
+	{
+		this.teacher = teacher;
 	}
 	
 }

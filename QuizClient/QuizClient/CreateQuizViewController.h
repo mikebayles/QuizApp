@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Question.h"
+#import "QuizCreateBrain.h"
 
 @interface CreateQuizViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *txtQuestion;
@@ -18,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtAnswer5;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segCorrect;
 @property NSMutableArray<Question, ConvertOnDemand> *questions;
+@property (nonatomic,strong)QuizCreateBrain* brain;
 @end

@@ -452,6 +452,7 @@
                         <outlet property="txtAnswer4" destination="58x-Xv-Cmx" id="GrH-RT-8Zc"/>
                         <outlet property="txtAnswer5" destination="F2e-TI-nz5" id="bHF-m6-hUh"/>
                         <outlet property="txtQuestion" destination="UyL-uX-2L3" id="l82-pu-pjm"/>
+                        <segue destination="kcF-Rj-ZlX" kind="modal" identifier="createQuizSuccess" id="sCh-W2-hQn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIs-jE-wAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -525,6 +526,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z8-PY-XGN">
+                                <rect key="frame" x="20" y="436" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Ping Teacher">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPing:" destination="ctI-XY-ZdR" eventType="touchUpInside" id="8uX-a1-V5Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -600,5 +611,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Y9c-zE-7hR"/>
+        <segue reference="sCh-W2-hQn"/>
     </inferredMetricsTieBreakers>
 </document>

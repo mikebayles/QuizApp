@@ -19,12 +19,21 @@
 @synthesize txtAnswer5 = _txtAnswer5;
 @synthesize questions = _questions;
 @synthesize segCorrect = _segCorrect;
+@synthesize brain = _brain;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	self.txtQuestion.layer.borderWidth = 1.0f;
     self.questions = [NSMutableArray new];
 }
+
+- (QuizCreateBrain *) brain
+{
+    if(!_brain) _brain = [[QuizCreateBrain alloc] init];
+    return _brain;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.txtQuestion resignFirstResponder];
@@ -87,6 +96,7 @@
     [self.txtAnswer3 setText:@""];
     [self.txtAnswer4 setText:@""];
     [self.txtAnswer5 setText:@""];
+    [self.txtQuestion setText:@""];
     
     self.segCorrect.selectedSegmentIndex = 0;
 }
@@ -122,6 +132,11 @@
     Quiz* quiz = [QuizDataStore instance].quizInProgress;
     quiz.questions = self.questions;
     
+    if([self.brain createQuiz:quiz])
+    {
+        [self.questions removeAllObjects];
+        [self performSegueWithIdentifier:@"createQuizSuccess" sender:self];
+    }
     
 }
 

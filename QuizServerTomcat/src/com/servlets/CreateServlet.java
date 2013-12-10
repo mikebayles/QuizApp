@@ -8,9 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.common.MySQLHelper;
 import com.google.gson.Gson;
 import com.model.CourseCollection;
+import com.model.Profile;
+import com.model.Quiz;
 
 /**
  * Servlet implementation class CreateServlet
@@ -24,8 +27,7 @@ public class CreateServlet extends HttpServlet {
      */
     public CreateServlet() 
     {
-        super();
-        // TODO Auto-generated constructor stub
+        super();        
     }
 
 	/**
@@ -52,6 +54,11 @@ public class CreateServlet extends HttpServlet {
 			CourseCollection courses = new CourseCollection();
 			courses.setCourses(mySQLHelper.getCourses());
 			writer.print(gson.toJson(courses,CourseCollection.class));
+		}
+		else if(method.equals("createQuiz"))
+		{
+			Quiz quiz = gson.fromJson(request.getParameter("json"), Quiz.class);			
+			writer.println(mySQLHelper.createQuiz(quiz));
 		}
 	}
 

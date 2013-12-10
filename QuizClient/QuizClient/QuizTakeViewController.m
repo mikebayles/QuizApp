@@ -121,6 +121,15 @@
     [self refreshData];
 }
 
+- (IBAction)btnPing:(id)sender
+{
+    NSString* teacher = currentQuiz.course.teacher;
+    NSString* message = [NSString stringWithFormat:@"method=ping&teacher=%@&student=%@",teacher, [QuizDataStore instance].auth.username];
+    
+    NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"QuizServlet"];
+}
+
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1)
     {
