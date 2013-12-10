@@ -30,6 +30,7 @@
     self.itemsArray = [self.brain getCourses].courses;//[[NSArray alloc] initWithObjects:@"Item 1", @"Item 2", @"Item 3", @"Item 4", @"Item 6", nil];
     self.lblError.text = @"";
 	[self.lblError setTextColor:[UIColor redColor]];
+    [self startTimer];
 }
 
 // returns the number of 'columns' to display.
@@ -90,6 +91,12 @@
     NSString* message = [NSString stringWithFormat:@"method=getPing&teacher=%@",teacher];
     
     NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"QuizServlet"];
+    if(response.length > 0 && ![response isEqualToString:@"\n"])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:response delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
+    //NSLog(@"response = %@",response);
     
 }
 

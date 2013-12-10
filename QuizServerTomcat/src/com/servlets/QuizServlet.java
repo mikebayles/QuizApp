@@ -70,7 +70,7 @@ public class QuizServlet extends HttpServlet {
 		}
 		else if(method.equals("getPing"))
 		{
-			writer.println(MySQLHelper.getInstance().doIHavePing(request.getParameter("teacher")));
+			writer.println(MySQLHelper.getInstance().getMyPings(request.getParameter("teacher")));
 		}
 	}
 

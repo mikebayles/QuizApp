@@ -287,18 +287,28 @@ public class MySQLHelper
 		executeNonQuery(insertQuery);
 	}
 	
-	public boolean doIHavePing(String teacher)
+	public String getMyPings(String teacher)
 	{	
 		try
-		{
-			String query = String.format("SELECT * from q_ping WHERE teacher = '%s'",teacher);
+		{		
+			String query = String.format("SELECT * from q_ping join q_users on student = username WHERE teacher = '%s'",teacher);
+		
 			ResultSet rs = executeSelect(query);	
-			return rs.next();
+			if(rs.next())
+			{
+				int id = rs.getInt("id");
+				
+				String delete = String.format("DELETE FROM q_ping where id = %s",id);
+				executeNonQuery(delete);
+				return String.format("Student - %s %s needs your attention", rs.getString("first_name"),rs.getString("last_name"));
+			}
+			
+			return "";
 		} 
 		catch (SQLException e)
 		{
 			e.printStackTrace();
-			return false;
+			return "";
 		}
 	}
 }
