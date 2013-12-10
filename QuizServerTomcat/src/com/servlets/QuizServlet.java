@@ -64,6 +64,14 @@ public class QuizServlet extends HttpServlet {
 				MySQLHelper.getInstance().insertStudentAnswer(studentAnswer);
 			}
 		}
+		else if(method.equals("ping"))
+		{
+			MySQLHelper.getInstance().insertPing(request.getParameter("student"), request.getParameter("teacher"));
+		}
+		else if(method.equals("getPing"))
+		{
+			writer.println(MySQLHelper.getInstance().doIHavePing(request.getParameter("teacher")));
+		}
 	}
 
 }

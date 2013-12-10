@@ -9,6 +9,7 @@
 #import "QuizInitiator.h"
 #import "Quiz.h"
 #import "QuizDataStore.h"
+#import "QuizNetworkHelp.h"
 
 @implementation QuizInitiator
 @synthesize cboCourse = _cboCourse;
@@ -71,6 +72,24 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.txtDescription resignFirstResponder];
+    
+}
+
+- (void) startTimer
+{
+    [NSTimer scheduledTimerWithTimeInterval:1
+                                     target:self
+                                   selector:@selector(tick:)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+- (void) tick:(NSTimer *) timer
+{
+    NSString* teacher = [QuizDataStore instance].auth.username;
+    NSString* message = [NSString stringWithFormat:@"method=getPing&teacher=%@",teacher];
+    
+    NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"QuizServlet"];
     
 }
 
