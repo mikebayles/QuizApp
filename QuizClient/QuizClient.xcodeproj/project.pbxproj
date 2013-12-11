@@ -44,6 +44,7 @@
 		6077BD2718176F3F005FFF1D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1C18176F3F005FFF1D /* JSONKeyMapper.m */; };
 		6077BD2818176F3F005FFF1D /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */; };
 		60AA8360183982E70081C464 /* LoginViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60AA835F183982E70081C464 /* LoginViewDelegate.m */; };
+		60C46D6F1857FA76008A4E4F /* TeacherGradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C46D6E1857FA76008A4E4F /* TeacherGradeViewController.m */; };
 		60D1E3B0182BF1A1008763BE /* QuizTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */; };
 		60D1E3B3182BF297008763BE /* QuizDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D1E3B2182BF297008763BE /* QuizDataStore.m */; };
 		60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EBEFEB18209A07006732E6 /* QuizViewController.m */; };
@@ -175,6 +176,8 @@
 		6077BD1E18176F3F005FFF1D /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		60AA835E183982E70081C464 /* LoginViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewDelegate.h; sourceTree = "<group>"; };
 		60AA835F183982E70081C464 /* LoginViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewDelegate.m; sourceTree = "<group>"; };
+		60C46D6D1857FA76008A4E4F /* TeacherGradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherGradeViewController.h; sourceTree = "<group>"; };
+		60C46D6E1857FA76008A4E4F /* TeacherGradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherGradeViewController.m; sourceTree = "<group>"; };
 		60D1E3AE182BF1A1008763BE /* QuizTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizTakeViewController.h; sourceTree = "<group>"; };
 		60D1E3AF182BF1A1008763BE /* QuizTakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizTakeViewController.m; sourceTree = "<group>"; };
 		60D1E3B1182BF297008763BE /* QuizDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizDataStore.h; sourceTree = "<group>"; };
@@ -544,6 +547,8 @@
 				600B1551183EF14100269017 /* CreateQuizViewController.m */,
 				60F162B018558250004899B9 /* QuizInitiator.h */,
 				60F162B118558250004899B9 /* QuizInitiator.m */,
+				60C46D6D1857FA76008A4E4F /* TeacherGradeViewController.h */,
+				60C46D6E1857FA76008A4E4F /* TeacherGradeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 				6077BD2018176F3F005FFF1D /* JSONModelArray.m in Sources */,
 				60F1577C181CE43600FEA411 /* UserSettingsController.m in Sources */,
 				6073875A183AFB9900038137 /* StudentAnswer.m in Sources */,
+				60C46D6F1857FA76008A4E4F /* TeacherGradeViewController.m in Sources */,
 				60F162B518558940004899B9 /* QuizInitiatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

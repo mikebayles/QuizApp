@@ -1,6 +1,6 @@
 package com.model;
 
-public class Auth
+public class Auth implements java.io.Serializable
 {
 	private String username = "";
 	private String password = "";

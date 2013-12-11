@@ -280,10 +280,10 @@
             </objects>
             <point key="canvasLocation" x="-671" y="-1165"/>
         </scene>
-        <!--View Controller - Grades-->
+        <!--Teacher Grade View Controller - Grades-->
         <scene sceneID="PLu-4l-VfS">
             <objects>
-                <viewController id="kGL-o1-V0f" sceneMemberID="viewController">
+                <viewController id="kGL-o1-V0f" customClass="TeacherGradeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Utp-Uq-IMl"/>
                         <viewControllerLayoutGuide type="bottom" id="Iai-ba-pLX"/>
@@ -291,13 +291,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ugt-hE-QGE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dgl-aS-ly3">
+                                <rect key="frame" x="0.0" y="185" width="320" height="332"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kGL-o1-V0f" id="fYA-rz-OUf"/>
+                                    <outlet property="delegate" destination="kGL-o1-V0f" id="Wx9-0a-31A"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Grades" id="Nqp-JI-cPQ"/>
+                    <connections>
+                        <outlet property="tblGrades" destination="dgl-aS-ly3" id="YSx-cT-she"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbr-nT-lrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-139" y="-841"/>
+            <point key="canvasLocation" x="-151" y="-801"/>
         </scene>
         <!--Create Quiz View Controller-->
         <scene sceneID="81t-WE-6Hh">
