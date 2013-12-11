@@ -8,9 +8,10 @@
 		<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 		
 		<link href='http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="login.css" type="text/css" >
+		<link rel="stylesheet" href="main.css" type="text/css" >
 		
 		<script>
+			var courses = new Array();
 			var nextNumber = 1;			
 			var questions = new Array();
 			var currentQuestion;
@@ -28,8 +29,7 @@
 					if(nextNumber <5)
 					{
 						nextNumber++;
-						$("#answerHolder").append('<input type="radio" name="is_correct" value="' + nextNumber + '">Correct?<br>');
-						$("#answerHolder").append('<input type="text" id="answer' + nextNumber + '" name="answer' + nextNumber + '" placeholder="Answer'+ nextNumber + '">');
+						appendAnswer();
 					}
 				});
 				
@@ -50,14 +50,16 @@
 					
 					insertAnswer();
 					insertQuestion();
-					reset();
+					//reset();
 					
-					var course = {'id':'CSCI 415','description':'Computer networking and paralell computation','teacher':'michael.bayles'};
+					var courseIndex = $("#course").val();
+					
+					var course = courses[courseIndex];
 					var quiz = {'id':0,'description':'','course':course,'questions' : questions};
 					
 					var json = JSON.stringify(quiz);
 					//json=%7B'username':'michael.bayles','password':'bayles'%7D&method=isTeacher
-					$.post('CreateServlet?method=createQuiz&json=' + json, function(data)
+					$.post('aCreateServlet?method=createQuiz&json=' + json, function(data)
 					{
 						
 						alert(data);
@@ -65,15 +67,37 @@
 					});
 				});
 				
+				setInterval(checkPings,1000);
+				
 			});
+			
+			function checkPings()
+			{
+				var username = $("#username").val()
+				$.post('QuizServlet?method=getPing&teacher=' + username, function(data)
+				{
+					if(data.length > 1)
+						alert(data);
+				
+				});
+			}
+			
+			function appendAnswer()
+			{
+				var newRow = '<tr class="answerRow"><th>Answer ' + nextNumber +'</th>';
+				newRow += '<td><input type="text" id="answer' + nextNumber + '" name="answer' + nextNumber + '" placeholder="Answer'+ nextNumber + '">';
+				newRow += '<input type="radio" name="is_correct" value="' + nextNumber + '">Correct?</td></tr>';
+				$('#answerHolder > tbody:last').append(newRow);
+				
+			}
 			
 			function reset()
 			{
 				nextNumber = 1;
 				$("#question").val('');
-				$("#answerHolder").empty();
-				$("#answerHolder").append('<input type="radio" name="is_correct" value="' + nextNumber + '">Correct?<br>');
-				$("#answerHolder").append('<input type="text" id="answer' + nextNumber + '" name="answer' + nextNumber + '" placeholder="Answer'+ nextNumber + '">');
+				$( ".answerRow" ).remove();
+				//$("#answerHolder").empty();
+				appendAnswer();
 				currentAnswers = new Array();
 				currentQuestion = null;
 			}
@@ -99,7 +123,7 @@
 					
 						var select = document.getElementsByTagName('select')[0];
 						select.options.length = 0; // clear out existing items
-						var courses = jQuery.parseJSON(data).courses;
+						courses = jQuery.parseJSON(data).courses;
 						for(var i=0; i < courses.length; i++) 
 						{
 						    var d = courses[i];
@@ -112,16 +136,40 @@
 		</script>
 	</head>
 	<body>
+		<% if (session.getAttribute("username") == null) 
+		{ 
+			String redirectURL = "Login.jsp"; 
+		    response.sendRedirect(redirectURL);
+		}		
+		%>
+		
+	
+	
 		<script>getCourses();</script>
 		<div id="wrapper">		
 			<form>
-				<select id="course"></select>
-				<input type="text" id="description" name="description" placeholder="quiz description">
-				<textarea id="question" name="question"></textarea>
-				<div id="answerHolder">
-					<input type="radio" name="is_correct" value="true">Correct?<br> 
-					<input type="text" id="answer1" name="answer1" placeholder="Answer1">										
-				</div>
+				<input id="username" type="hidden" name="username" value='<%= session.getAttribute("username")%>'>
+				<table id="answerHolder">
+					<tbody >
+						<tr>
+							<th>Select course</th>
+							<td><select id="course"></select></td>
+						</tr>
+						<tr>
+							<th>Quiz description</th>
+							<td><textarea id="description" name="description" placeholder="quiz description"></textarea></td>
+						</tr>
+						<tr>
+							<th>Question text</th>
+							<td><textarea id="question" name="question" placeholder="quiz text"></textarea></td>
+						</tr>
+						<tr class="answerRow">
+							<th>Answer 1</th>							
+							<td><input type="text" id="answer1" name="answer1" placeholder="Answer1">
+							<input type="radio" name="is_correct" value="true">Correct?</td>
+						</tr>
+					</tbody>					
+				</table>		
 				<button id="add">Add Answer</button>
 				<button id="next">Next Question</button>
 				<button id="submit">Submit</button>

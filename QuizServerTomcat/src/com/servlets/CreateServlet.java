@@ -8,11 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.common.MySQLHelper;
 import com.google.gson.Gson;
 import com.model.CourseCollection;
-import com.model.Profile;
 import com.model.Quiz;
 
 /**

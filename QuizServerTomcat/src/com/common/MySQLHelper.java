@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.model.Answer;
@@ -166,6 +167,7 @@ public class MySQLHelper
 			ret.add(question);
 		}
 		
+		Collections.shuffle(ret);
 		return ret;
 	}
 

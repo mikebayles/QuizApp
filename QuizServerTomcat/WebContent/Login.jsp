@@ -19,9 +19,9 @@
 					
 					if(data == "TRUE")
 					{
-						alert("We are good to go");
+						//alert("We are good to go");
 						//var role = $("#role").val();
-						//window.location = role + '.php';
+						window.location = 'CreateQuiz.jsp';
 					}
 					else
 						$("#response").html("<pre>Invalid Username/Password</pre>");

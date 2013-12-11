@@ -39,7 +39,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] toString];
+    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     return cell;
 }
 

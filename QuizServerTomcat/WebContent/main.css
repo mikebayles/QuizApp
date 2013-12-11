@@ -1,0 +1,22 @@
+body
+{
+	font-family: Verdana, arial, serif;
+	width: 75%;
+	padding: 12px;
+	margin: 20px auto;
+	border: 2px #555555 solid;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+th 
+{
+	text-align:left; 
+}
+			
+input[type=text], input[type=password], input[type=number],table select, input[type=checkbox], textarea
+{	
+	margin: 8px 0 8px 20px;
+	
+}
