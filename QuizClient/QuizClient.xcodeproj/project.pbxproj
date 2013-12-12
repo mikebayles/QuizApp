@@ -56,6 +56,9 @@
 		60F162B218558250004899B9 /* QuizInitiator.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F162B118558250004899B9 /* QuizInitiator.m */; };
 		60F162B518558940004899B9 /* QuizInitiatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F162B418558940004899B9 /* QuizInitiatorBrain.m */; };
 		60F162B818558A3D004899B9 /* CourseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F162B718558A3D004899B9 /* CourseCollection.m */; };
+		60F8E61818594A2200DBD9C1 /* StudentGradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8E61718594A2200DBD9C1 /* StudentGradeViewController.m */; };
+		60F8E61B18594F0B00DBD9C1 /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8E61A18594F0B00DBD9C1 /* Grade.m */; };
+		60F8E61E18594FCD00DBD9C1 /* GradeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F8E61D18594FCD00DBD9C1 /* GradeCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +203,12 @@
 		60F162B418558940004899B9 /* QuizInitiatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizInitiatorBrain.m; sourceTree = "<group>"; };
 		60F162B618558A3D004899B9 /* CourseCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCollection.h; sourceTree = "<group>"; };
 		60F162B718558A3D004899B9 /* CourseCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCollection.m; sourceTree = "<group>"; };
+		60F8E61618594A2200DBD9C1 /* StudentGradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentGradeViewController.h; sourceTree = "<group>"; };
+		60F8E61718594A2200DBD9C1 /* StudentGradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentGradeViewController.m; sourceTree = "<group>"; };
+		60F8E61918594F0B00DBD9C1 /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
+		60F8E61A18594F0B00DBD9C1 /* Grade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grade.m; sourceTree = "<group>"; };
+		60F8E61C18594FCD00DBD9C1 /* GradeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeCollection.h; sourceTree = "<group>"; };
+		60F8E61D18594FCD00DBD9C1 /* GradeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +336,10 @@
 				6073875C183B03B600038137 /* StudentAnswerCollection.m */,
 				60F162B618558A3D004899B9 /* CourseCollection.h */,
 				60F162B718558A3D004899B9 /* CourseCollection.m */,
+				60F8E61918594F0B00DBD9C1 /* Grade.h */,
+				60F8E61A18594F0B00DBD9C1 /* Grade.m */,
+				60F8E61C18594FCD00DBD9C1 /* GradeCollection.h */,
+				60F8E61D18594FCD00DBD9C1 /* GradeCollection.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -549,6 +562,8 @@
 				60F162B118558250004899B9 /* QuizInitiator.m */,
 				60C46D6D1857FA76008A4E4F /* TeacherGradeViewController.h */,
 				60C46D6E1857FA76008A4E4F /* TeacherGradeViewController.m */,
+				60F8E61618594A2200DBD9C1 /* StudentGradeViewController.h */,
+				60F8E61718594A2200DBD9C1 /* StudentGradeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -668,6 +683,7 @@
 				6077BD2118176F3F005FFF1D /* JSONModelClassProperty.m in Sources */,
 				6077BCCA181768F1005FFF1D /* LoginBrain.m in Sources */,
 				6077BD2718176F3F005FFF1D /* JSONKeyMapper.m in Sources */,
+				60F8E61818594A2200DBD9C1 /* StudentGradeViewController.m in Sources */,
 				60F15779181CDF4000FEA411 /* QuizHomeController.m in Sources */,
 				6077BD2218176F3F005FFF1D /* JSONModelError.m in Sources */,
 				6077BCA0181765C2005FFF1D /* main.m in Sources */,
@@ -685,8 +701,10 @@
 				60F162B218558250004899B9 /* QuizInitiator.m in Sources */,
 				6012E2F41856434500D40C71 /* QuizCreateBrain.m in Sources */,
 				60EBEFF51820B9F4006732E6 /* Profile.m in Sources */,
+				60F8E61B18594F0B00DBD9C1 /* Grade.m in Sources */,
 				60EBEFEC18209A07006732E6 /* QuizViewController.m in Sources */,
 				6077BD2618176F3F005FFF1D /* JSONModel+networking.m in Sources */,
+				60F8E61E18594FCD00DBD9C1 /* GradeCollection.m in Sources */,
 				60EBEFF21820A67D006732E6 /* ProfileBrain.m in Sources */,
 				603AABED1825BB09002DF9A6 /* QuizBrain.m in Sources */,
 				603AABF01825BF1E002DF9A6 /* QuizCollection.m in Sources */,

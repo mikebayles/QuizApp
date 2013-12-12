@@ -55,11 +55,11 @@
 					var courseIndex = $("#course").val();
 					
 					var course = courses[courseIndex];
-					var quiz = {'id':0,'description':'','course':course,'questions' : questions};
+					var quiz = {'id':0,'description':$("#description").val(),'course':course,'questions' : questions};
 					
 					var json = JSON.stringify(quiz);
 					//json=%7B'username':'michael.bayles','password':'bayles'%7D&method=isTeacher
-					$.post('aCreateServlet?method=createQuiz&json=' + json, function(data)
+					$.post('CreateServlet?method=createQuiz&json=' + json, function(data)
 					{
 						
 						alert(data);
@@ -77,7 +77,12 @@
 				$.post('QuizServlet?method=getPing&teacher=' + username, function(data)
 				{
 					if(data.length > 1)
-						alert(data);
+					{
+						var js = "$(this).parents('tr').remove();";
+						var newRow = '<tr><th>' + data + '</th>' + '<td><button onclick="' + js + '">Acknowledge</button></td></tr>';
+						$('#answerHolder > tbody:last').append(newRow);
+					}
+						//alert(data);
 				
 				});
 			}
@@ -161,7 +166,7 @@
 						</tr>
 						<tr>
 							<th>Question text</th>
-							<td><textarea id="question" name="question" placeholder="quiz text"></textarea></td>
+							<td><textarea id="question" name="question" placeholder="question text"></textarea></td>
 						</tr>
 						<tr class="answerRow">
 							<th>Answer 1</th>							

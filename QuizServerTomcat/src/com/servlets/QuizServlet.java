@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.common.MySQLHelper;
 import com.google.gson.Gson;
+import com.model.GradeCollection;
 import com.model.QuizCollection;
 import com.model.StudentAnswer;
 import com.model.StudentAnswerCollection;
@@ -71,6 +72,12 @@ public class QuizServlet extends HttpServlet {
 		else if(method.equals("getPing"))
 		{
 			writer.println(MySQLHelper.getInstance().getMyPings(request.getParameter("teacher")));
+		}
+		else if(method.equals("getStudentGrades"))
+		{
+			GradeCollection grades = new GradeCollection();
+			grades.setGrades(MySQLHelper.getInstance().getStudentGrades(request.getParameter("student"), request.getParameter("course")));
+			writer.println(gson.toJson(grades,GradeCollection.class));
 		}
 	}
 

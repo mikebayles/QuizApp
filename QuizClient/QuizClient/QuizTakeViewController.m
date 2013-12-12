@@ -97,14 +97,14 @@
 {
     self.btnPrevious.hidden = questionIndex == 0;
     //self.btnNext.hidden = questionIndex == tableData.count - 1;
-    if(questionIndex == tableData.count - 1)
+    if(questionIndex == currentQuiz.questions.count - 1)
         [self.btnNext setTitle:@"Submit" forState:UIControlStateNormal];
     else
         [self.btnNext setTitle:@"Next Question" forState:UIControlStateNormal];
 }
 - (IBAction)btnNextPressed:(id)sender
 {
-    if(questionIndex == tableData.count - 1)
+    if(questionIndex == currentQuiz.questions.count - 1)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait" message:@"Are you sure you want to submit?  This action cannot be undone" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         [alert show];

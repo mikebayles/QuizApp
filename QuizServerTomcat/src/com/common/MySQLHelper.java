@@ -11,6 +11,7 @@ import java.util.List;
 import com.model.Answer;
 import com.model.Auth;
 import com.model.Course;
+import com.model.Grade;
 import com.model.Profile;
 import com.model.Question;
 import com.model.Quiz;
@@ -311,6 +312,29 @@ public class MySQLHelper
 		{
 			e.printStackTrace();
 			return "";
+		}
+	}
+	
+	public List<Grade> getStudentGrades(String username, String course)
+	{
+		List<Grade> ret = new ArrayList<Grade>();
+		try
+		{		
+			String query = String.format("SELECT * from q_grade_per_quiz WHERE student = '%s' and course = '%s'",username, course);
+		
+			ResultSet rs = executeSelect(query);	
+			while(rs.next())
+			{
+				Grade grade = new Grade(rs.getString("description"),rs.getString("student"),rs.getString("course"),rs.getInt("Points Possible"),rs.getInt("Points Earned"),rs.getDouble("Percent"),rs.getString("Letter Grade"));
+				ret.add(grade);
+			}
+			
+			return ret;
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			return null;
 		}
 	}
 }
