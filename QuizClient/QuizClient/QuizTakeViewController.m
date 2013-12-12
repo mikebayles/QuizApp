@@ -36,7 +36,7 @@
     
     letters = [[NSArray alloc] initWithObjects:@"A",@"B",@"C",@"D",@"E",@"F", nil];
     studentAnswers = [NSMutableArray new];
-    currentQuiz = [[QuizDataStore instance].quizes.quizes objectAtIndex:0];
+    currentQuiz = [QuizDataStore instance].quizAboutToTake;
     
     self.tblQuestion.layer.borderWidth = 1.0f;
                          

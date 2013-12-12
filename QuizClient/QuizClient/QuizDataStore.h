@@ -14,5 +14,6 @@
 @property Auth* auth;
 @property QuizCollection* quizes;
 @property Quiz* quizInProgress;
+@property Quiz* quizAboutToTake;
 + (QuizDataStore *)instance;
 @end

@@ -16,6 +16,7 @@
 			var questions = new Array();
 			var currentQuestion;
 			var currentAnswers = new Array();
+			var previousGrades;
 			
 			$(document).ready(function()
 			{
@@ -61,13 +62,14 @@
 					//json=%7B'username':'michael.bayles','password':'bayles'%7D&method=isTeacher
 					$.post('CreateServlet?method=createQuiz&json=' + json, function(data)
 					{
-						
-						alert(data);
+						if(data == "TRUE")
+							alert("Quiz created");
 					
 					});
 				});
-				
+							
 				setInterval(checkPings,1000);
+				setInterval(getGrades,1000);
 				
 			});
 			
@@ -80,7 +82,35 @@
 					{
 						var js = "$(this).parents('tr').remove();";
 						var newRow = '<tr><th>' + data + '</th>' + '<td><button onclick="' + js + '">Acknowledge</button></td></tr>';
-						$('#answerHolder > tbody:last').append(newRow);
+						$('#pingHolder > tbody:last').append(newRow);
+					}
+						//alert(data);
+				
+				});
+			}
+			
+			function getGrades()
+			{
+				
+				$.post('QuizServlet?method=getTeacherGrades', function(data)
+				{
+					if(data)
+					{
+						data = jQuery.parseJSON(data);
+						if(!previousGrades)
+							previousGrades = data;
+						if(previousGrades != data)
+						{
+							$(".gradeRow").remove();
+							$.each(data.grades, function(i, grade) 
+							{	
+								
+								var newRow='<tr class="gradeRow"><td>' + grade.student + '</td><td>' + grade.course + '</td><td>' + grade.quizDescription + '</td><td>' + grade.pointsPossible + '</td><td>' + grade.pointsEarned + '<td>' + grade.percentage + '%</td><td>' + grade.letterGrade + '</td></tr>' 
+								$('#gradeTable > tbody:last').append(newRow);
+							});
+							previousGrades = data;
+						}
+						
 					}
 						//alert(data);
 				
@@ -178,6 +208,25 @@
 				<button id="add">Add Answer</button>
 				<button id="next">Next Question</button>
 				<button id="submit">Submit</button>
+				
+				<table id="pingHolder" style="margin-top:50px;">
+					<tbody>
+					</tbody>
+				</table>
+				
+				<table id="gradeTable" style="margin-top:100px;">
+					<tbody>
+						<tr>
+							<th>Student ID</th>
+							<th>Course</th>
+							<th>Quiz Description</th>
+							<th>Points Possible</th>
+							<th>Points Earned</th>
+							<th>Percentage</th>
+							<th>Letter Grade</th>
+						</tr>
+					</tbody>
+				</table>
 			</form>	
 		</div>
 	</body>

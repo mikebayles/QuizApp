@@ -7,6 +7,7 @@
 //
 
 #import "QuizViewController.h"
+#import "QuizDataStore.h"
 
 @implementation QuizViewController
 {
@@ -52,6 +53,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [QuizDataStore instance].quizAboutToTake = [tableData objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"TakeQuiz" sender:self];
 }
 

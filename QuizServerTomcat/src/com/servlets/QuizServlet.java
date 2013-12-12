@@ -79,6 +79,13 @@ public class QuizServlet extends HttpServlet {
 			grades.setGrades(MySQLHelper.getInstance().getStudentGrades(request.getParameter("student"), request.getParameter("course")));
 			writer.println(gson.toJson(grades,GradeCollection.class));
 		}
+		
+		else if(method.equals("getTeacherGrades"))
+		{
+			GradeCollection grades = new GradeCollection();
+			grades.setGrades(MySQLHelper.getInstance().getTeacherGrades());
+			writer.println(gson.toJson(grades,GradeCollection.class));
+		}
 	}
 
 }

@@ -337,4 +337,27 @@ public class MySQLHelper
 			return null;
 		}
 	}
+	
+	public List<Grade> getTeacherGrades()
+	{
+		List<Grade> ret = new ArrayList<Grade>();
+		try
+		{		
+			String query = String.format("SELECT * FROM mbayles.q_grade_per_quiz order by course, `Student Name`");
+		
+			ResultSet rs = executeSelect(query);	
+			while(rs.next())
+			{
+				Grade grade = new Grade(rs.getString("description"),rs.getString("student"),rs.getString("course"),rs.getInt("Points Possible"),rs.getInt("Points Earned"),rs.getDouble("Percent"),rs.getString("Letter Grade"));
+				ret.add(grade);
+			}
+			
+			return ret;
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}
 }
