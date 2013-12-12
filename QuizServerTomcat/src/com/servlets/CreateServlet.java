@@ -56,7 +56,7 @@ public class CreateServlet extends HttpServlet {
 		else if(method.equals("createQuiz"))
 		{
 			Quiz quiz = gson.fromJson(request.getParameter("json"), Quiz.class);			
-			writer.println(mySQLHelper.createQuiz(quiz));
+			writer.print(mySQLHelper.createQuiz(quiz));
 		}
 	}
 

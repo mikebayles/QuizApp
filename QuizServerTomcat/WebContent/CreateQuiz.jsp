@@ -62,7 +62,7 @@
 					//json=%7B'username':'michael.bayles','password':'bayles'%7D&method=isTeacher
 					$.post('CreateServlet?method=createQuiz&json=' + json, function(data)
 					{
-						if(data == "TRUE")
+						if(data == "true")
 							alert("Quiz created");
 					
 					});
