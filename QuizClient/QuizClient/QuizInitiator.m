@@ -91,7 +91,7 @@
     NSString* message = [NSString stringWithFormat:@"method=getPing&teacher=%@",teacher];
     
     NSString* response = [QuizNetworkHelp makePostRequest:message withServlet:@"QuizServlet"];
-    if(response.length > 0 && ![response isEqualToString:@"\n"])
+    if(response.length > 5 && ![response isEqualToString:@"\n"])
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Attention" message:response delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];

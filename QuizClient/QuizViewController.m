@@ -27,7 +27,6 @@
     [super viewDidLoad];
     
     NSMutableArray<Quiz>* quizes = [[self.brain getQuizes].quizes mutableCopy];
-    
     tableData = quizes;
 }
 
