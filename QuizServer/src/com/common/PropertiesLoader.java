@@ -1,7 +1,7 @@
-package com.csci.common;
+package com.common;
 
-import java.io.FileInputStream;
 import java.util.Properties;
+
 
 public class PropertiesLoader
 {
@@ -11,8 +11,8 @@ public class PropertiesLoader
 	{
 		properties = new Properties();
 		try
-		{
-			properties.load(new FileInputStream("config.properties"));
+		{			
+			properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
 		} 
 		catch (Exception e)
 		{		

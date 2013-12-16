@@ -12,7 +12,7 @@
 
 + (NSString *) makePostRequest: (NSString *)message withServlet:(NSString *)servlet
 {
-    NSString *url = [NSString stringWithFormat:@"http://localhost:8080/QuizServerTomcat/%@",servlet];
+    NSString *url = [NSString stringWithFormat:@"http://students.cs.ndsu.nodak.edu/~mbayles/servlet/%@",servlet];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[message dataUsingEncoding:NSUTF8StringEncoding]];

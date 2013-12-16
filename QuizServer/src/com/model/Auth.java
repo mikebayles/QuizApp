@@ -1,9 +1,9 @@
-package com.csci.model;
+package com.model;
 
-public class Auth
+public class Auth implements java.io.Serializable
 {
-	private String username;
-	private String password;
+	private String username = "";
+	private String password = "";
 	
 	public String getUsername() 
 	{
